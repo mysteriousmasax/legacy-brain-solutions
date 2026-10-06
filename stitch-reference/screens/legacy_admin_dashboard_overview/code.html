@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legacy CPA Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary-fixed": "#001f23",
+                        "on-surface": "#1b1c1c",
+                        "on-tertiary-fixed-variant": "#004f56",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "on-primary-fixed": "#001b3d",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "secondary-container": "#fed488",
+                        "surface": "#fbf9f8",
+                        "secondary": "#775a19",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#000d0f",
+                        "tertiary-container": "#00262a",
+                        "primary": "#000a1e",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "tertiary-fixed-dim": "#43d9ea",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary-container": "#708ab5",
+                        "primary-container": "#002147",
+                        "background": "#fbf9f8",
+                        "on-tertiary-container": "#0097a5",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#fbf9f8",
+                        "error": "#ba1a1a",
+                        "legacy-gold": "#C5A059",
+                        "primary-fixed-dim": "#aec7f6",
+                        "outline": "#74777f",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-fixed": "#261900",
+                        "tertiary-fixed": "#8ff2ff",
+                        "inverse-surface": "#303030",
+                        "charcoal-text": "#333333",
+                        "inverse-primary": "#aec7f6",
+                        "surface-muted": "#F6F5F5",
+                        "on-secondary-container": "#785a1a",
+                        "professional-cyan": "#2ACADB",
+                        "surface-container-high": "#eae8e7",
+                        "surface-variant": "#e4e2e1",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#465f88",
+                        "error-container": "#ffdad6",
+                        "heritage-navy": "#002147",
+                        "on-background": "#1b1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "base": "8px",
+                        "gutter-desktop": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased flex min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="w-64 bg-surface border-r border-heritage-navy/10 flex flex-col hidden md:flex sticky top-0 h-screen overflow-y-auto z-10">
+<div class="p-base">
+<div class="flex items-center gap-4 mb-12 mt-4 px-4">
+<img alt="Legacy Logo" class="w-10 h-10 object-contain rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWaXtmz9otZ8BDkctKEx8gs4iegIySM9hybE6AO18d3Ho6uoNw4-Qc-xNV5zs6LgA51wDqptt2HxS9FApd81LUhhisJgAGsPjS2MIQ9ClA5TWEPaBVKcVBWOkwR2gez6JY_L1jbfqf1IwXz17j3UyBUEyw_brXk1q3ZA33sHN0YvKEmUfzYRphLY0sMRq_lKnNPGgncHtalyLgGfYqyU2Ft7-9D_dwCOfvt8Q-NQKI9VcBfs71XSySjpAFRPXQhayeWsA"/>
+<span class="font-headline-sm text-headline-sm text-heritage-navy font-bold">Legacy</span>
+</div>
+<nav class="flex flex-col gap-2 px-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-muted text-professional-cyan font-label-md text-label-md font-bold shadow-[0_4px_20px_rgba(42,202,219,0.08)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    Orders
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Clients
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">badge</span>
+                    Staff
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    System Settings
+                </a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-heritage-navy/10">
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="w-8 h-8 rounded-full bg-professional-cyan text-white flex items-center justify-center font-bold">A</div>
+<div class="flex-1">
+<div class="font-label-md text-label-md text-heritage-navy group-hover:text-professional-cyan transition-colors">Admin User</div>
+<div class="font-label-sm text-label-sm text-outline">Partner</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-professional-cyan transition-colors">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Top App Bar (Mobile Nav & Header) -->
+<header class="bg-surface sticky top-0 z-20 border-b border-heritage-navy/10 px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center h-20 shadow-[0_2px_10px_rgba(0,33,71,0.02)]">
+<div class="flex items-center gap-4 md:hidden">
+<button class="text-heritage-navy">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<img alt="Legacy Logo" class="w-8 h-8 object-contain rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj74-RNRDwznbWEEj3qZpXTEjWVhE1IqaRVU0JBTt8kTwMItly8Yc2an6dfV62Pg9rzDXKJTwxcM2tSusWQHvqoRzoXeqDlLn27piKYuU7IeA0kBsqSbpjic-Xu8MwniCkTh-vZVmDWuqdZ27E3SPDbiwMsYUekCcuI5-FpGYmlzb8QOtwRfDYIkwLdIKq_-uiUEtvIeG9yl2XWoHWOUkDl5rLWYtqwKkhxS8lsWjY8-UcWUNn7GlIJ-NnrvVLXyVh4Zg"/>
+</div>
+<h1 class="font-headline-md text-headline-md text-heritage-navy hidden md:block">Executive Overview</h1>
+<h1 class="font-headline-sm text-headline-sm text-heritage-navy md:hidden">Dashboard</h1>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined text-heritage-navy cursor-pointer hover:text-professional-cyan transition-colors">notifications</span>
+<span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-error rounded-full"></span>
+</div>
+<button class="bg-professional-cyan text-white px-6 py-2 rounded-DEFAULT font-label-md text-label-md hover:bg-professional-cyan/90 transition-colors hidden md:block">
+                    Generate Report
+                </button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-margin-mobile md:p-margin-desktop space-y-gutter-desktop max-w-[1600px] mx-auto w-full">
+<!-- High Level Metrics (Bento Grid) -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<!-- Metric 1 -->
+<div class="bg-white border border-surface-muted p-6 rounded-DEFAULT hover:shadow-[0_20px_40px_rgba(0,33,71,0.06)] transition-shadow duration-300 group flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-muted rounded-full opacity-50 group-hover:bg-professional-cyan/10 transition-colors duration-500"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="font-label-md text-label-md text-outline">Active Engagements</span>
+<span class="material-symbols-outlined text-professional-cyan">folder_open</span>
+</div>
+<div class="relative z-10">
+<div class="font-headline-lg text-headline-lg text-heritage-navy">142</div>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-professional-cyan">trending_up</span>
+<span>+12% from last month</span>
+</div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-white border border-surface-muted p-6 rounded-DEFAULT hover:shadow-[0_20px_40px_rgba(0,33,71,0.06)] transition-shadow duration-300 group flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-muted rounded-full opacity-50 group-hover:bg-legacy-gold/10 transition-colors duration-500"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="font-label-md text-label-md text-outline">MTD Revenue</span>
+<span class="material-symbols-outlined text-legacy-gold">account_balance</span>
+</div>
+<div class="relative z-10">
+<div class="font-headline-lg text-headline-lg text-heritage-navy"><span class="text-headline-sm">$</span>1.2M</div>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-professional-cyan">trending_up</span>
+<span>Target on track</span>
+</div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-white border border-surface-muted p-6 rounded-DEFAULT hover:shadow-[0_20px_40px_rgba(0,33,71,0.06)] transition-shadow duration-300 group flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-muted rounded-full opacity-50 group-hover:bg-error/10 transition-colors duration-500"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="font-label-md text-label-md text-outline">Pending Requests</span>
+<span class="material-symbols-outlined text-heritage-navy">mark_email_unread</span>
+</div>
+<div class="relative z-10">
+<div class="font-headline-lg text-headline-lg text-heritage-navy">28</div>
+<div class="flex items-center gap-1 mt-1 font-label-sm text-label-sm text-outline">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<span>5 require urgent attention</span>
+</div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-white border border-surface-muted p-6 rounded-DEFAULT hover:shadow-[0_20px_40px_rgba(0,33,71,0.06)] transition-shadow duration-300 group flex flex-col justify-between h-40 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-muted rounded-full opacity-50 group-hover:bg-professional-cyan/10 transition-colors duration-500"></div>
+<div class="flex justify-between items-start relative z-10">
+<span class="font-label-md text-label-md text-outline">System Health</span>
+<span class="material-symbols-outlined text-professional-cyan">dns</span>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<div class="font-headline-lg text-headline-lg text-heritage-navy">99.9<span class="text-headline-sm">%</span></div>
+<div class="w-12 h-12 rounded-full border-4 border-surface-muted border-t-professional-cyan flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px] text-professional-cyan">check</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Dashboard Area (Charts & Activity) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter-desktop mt-8">
+<!-- Chart Area -->
+<div class="lg:col-span-2 bg-white border border-surface-muted rounded-DEFAULT p-6 flex flex-col min-h-[400px]">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy">Revenue vs Targets</h2>
+<select class="bg-surface-muted border-none rounded text-label-md font-label-md text-charcoal-text py-1 px-3 focus:ring-1 focus:ring-professional-cyan">
+<option>Q3 2024</option>
+<option>Q2 2024</option>
+<option>YTD</option>
+</select>
+</div>
+<!-- Placeholder for Chart -->
+<div class="flex-1 bg-surface-muted border border-heritage-navy/10 rounded flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+<div class="absolute bottom-0 left-10 w-12 h-32 bg-professional-cyan/80 rounded-t"></div>
+<div class="absolute bottom-0 left-32 w-12 h-48 bg-professional-cyan/80 rounded-t"></div>
+<div class="absolute bottom-0 left-52 w-12 h-40 bg-legacy-gold/80 rounded-t"></div>
+<div class="absolute bottom-0 left-72 w-12 h-64 bg-professional-cyan/80 rounded-t"></div>
+<div class="absolute bottom-0 left-92 w-12 h-56 bg-professional-cyan/80 rounded-t"></div>
+<span class="text-outline font-label-md relative z-10 bg-white/80 px-2 py-1 rounded">Chart Visualization Canvas</span>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-white border border-surface-muted rounded-DEFAULT p-6 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy">Recent Activity</h2>
+<button class="text-professional-cyan font-label-sm text-label-sm hover:underline">View All</button>
+</div>
+<div class="flex-1 overflow-y-auto pr-2 space-y-6">
+<!-- Activity Item -->
+<div class="flex gap-4 relative">
+<div class="absolute left-[15px] top-8 bottom-[-24px] w-px bg-surface-muted"></div>
+<div class="w-8 h-8 rounded-full bg-surface-muted flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-professional-cyan">upload_file</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-charcoal-text"><span class="font-semibold text-heritage-navy">Acme Corp</span> uploaded Q2 Financial Statements.</p>
+<span class="font-label-sm text-label-sm text-outline">10 mins ago</span>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4 relative">
+<div class="absolute left-[15px] top-8 bottom-[-24px] w-px bg-surface-muted"></div>
+<div class="w-8 h-8 rounded-full bg-surface-muted flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-legacy-gold">edit_document</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-charcoal-text"><span class="font-semibold text-heritage-navy">Sarah Jenkins</span> initiated tax review for Zenith Ltd.</p>
+<span class="font-label-sm text-label-sm text-outline">45 mins ago</span>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4 relative">
+<div class="absolute left-[15px] top-8 bottom-[-24px] w-px bg-surface-muted"></div>
+<div class="w-8 h-8 rounded-full bg-surface-muted flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-error">warning</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-charcoal-text">Compliance alert: Missing signatures on engagement letter 4029.</p>
+<span class="font-label-sm text-label-sm text-outline">2 hours ago</span>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4 relative">
+<div class="w-8 h-8 rounded-full bg-surface-muted flex items-center justify-center z-10 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-professional-cyan">check_circle</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-charcoal-text">Audit finalized for <span class="font-semibold text-heritage-navy">Global Logistics</span>.</p>
+<span class="font-label-sm text-label-sm text-outline">4 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="py-section-gap w-full border-t border-legacy-gold/30 mt-section-gap flex justify-center">
+<p class="font-label-sm text-label-sm text-outline">© 2024 Legacy CPA Tanzania. Secure Admin Portal.</p>
+</div>
+</div>
+</main>
+</body></html>

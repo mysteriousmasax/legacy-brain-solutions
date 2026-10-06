@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services - Legacy CPA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffdea5",
+                      "secondary-fixed-dim": "#e9c176",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#fbf9f8",
+                      "surface-container-low": "#f6f3f2",
+                      "primary": "#000a1e",
+                      "surface-container": "#f0eded",
+                      "tertiary-fixed": "#8ff2ff",
+                      "surface-container-high": "#eae8e7",
+                      "surface-bright": "#fbf9f8",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#004f56",
+                      "on-secondary-container": "#785a1a",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "tertiary-fixed-dim": "#43d9ea",
+                      "error-container": "#ffdad6",
+                      "background": "#fbf9f8",
+                      "on-secondary-fixed": "#261900",
+                      "primary-container": "#002147",
+                      "outline-variant": "#c4c6cf",
+                      "charcoal-text": "#333333",
+                      "secondary": "#775a19",
+                      "on-surface": "#1b1c1c",
+                      "outline": "#74777f",
+                      "tertiary-container": "#00262a",
+                      "on-tertiary-container": "#0097a5",
+                      "inverse-surface": "#303030",
+                      "secondary-container": "#fed488",
+                      "on-background": "#1b1c1c",
+                      "surface-tint": "#465f88",
+                      "surface-dim": "#dcd9d9",
+                      "professional-cyan": "#2ACADB",
+                      "on-primary-fixed": "#001b3d",
+                      "on-surface-variant": "#44474e",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#000d0f",
+                      "primary-fixed": "#d6e3ff",
+                      "surface-muted": "#F6F5F5",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "on-primary-container": "#708ab5",
+                      "primary-fixed-dim": "#aec7f6",
+                      "inverse-on-surface": "#f3f0f0",
+                      "on-error": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "heritage-navy": "#002147",
+                      "error": "#ba1a1a",
+                      "surface-variant": "#e4e2e1",
+                      "legacy-gold": "#C5A059",
+                      "inverse-primary": "#aec7f6",
+                      "on-tertiary-fixed": "#001f23"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "margin-mobile": "20px",
+                      "gutter-desktop": "24px",
+                      "base": "8px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "64px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 33, 71, 0.08);
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased md:max-w-7xl md:mx-auto">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-container-lowest border-b border-legacy-gold/30 fixed top-0 w-full z-50 flat no shadows flex justify-between items-center px-margin-mobile h-16 w-full md:hidden">
+<button aria-label="Menu" class="text-heritage-navy dark:text-primary-fixed hover:bg-surface-muted transition-colors active:opacity-80 transition-all p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-navy tracking-tight flex items-center gap-2">
+<img alt="Legacy CPA Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-MajrVOcWUnK3paTIw9bpzPClEYExNgsEAO_Fk856surf0Qc_jP55Wq-a3xKBeDRfva1RGqwjNwoG9W5GZqRO-AJnNdFVAe4Z1YTcG1O8MoEvXbXnzI2RLXlVxKS4EKKx-0Q9YsxmcEevlDGhZlyOQcgZfJe0p7GYbI77PVXal7yrzQRmN24e7y77qAZMc6YLQzT9XADwB0RPIKhfZIccrlqL26wT4gi2FNDrqbGeorLVdjrTWqT_sNqIEVvQ1zsKs-w"/>
+            LEGACY CPA
+        </div>
+<button class="text-heritage-navy dark:text-primary-fixed font-label-md text-label-md hover:bg-surface-muted transition-colors active:opacity-80 transition-all px-3 py-1 rounded-full border border-legacy-gold/30">
+            Contact
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16 pb-24 md:pt-24 px-margin-mobile md:px-gutter-desktop max-w-[1280px] mx-auto min-h-screen">
+<!-- Hero Section -->
+<section class="mt-8 mb-[120px] text-center md:text-left flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="flex-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-heritage-navy mb-4">Our Professional Services</h1>
+<div class="w-16 h-[2px] bg-legacy-gold/30 mx-auto md:mx-0 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto md:mx-0">
+                    Delivering precision-engineered financial solutions for Tanzanian businesses. We combine heritage stability with modern efficiency to build lasting legacy value for our clients.
+                </p>
+</div>
+<div class="w-full md:w-1/2 aspect-[4/3] rounded-lg overflow-hidden border border-legacy-gold/10 relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A high-resolution, slightly desaturated environmental portrait of a diverse team of Tanzanian financial professionals in a modern, well-lit boardroom in Dar es Salaam. The lighting is crisp and natural, highlighting a collaborative atmosphere with architectural elements in the background. The mood is authoritative yet accessible, utilizing a heritage modernism style with crisp whites and deep navy tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDPtPMHLjvsY20OpF8szPZ2rw7F8VMchj-uO12bFCnhOzE0trbtAsZWSokQyfheU0inQIqAbRQCviWF5zRKQ2Sn4yYl0ShFlTT90a4Nqcw1NzukwaIVKXAfUV9axrN-DaiZxoozOGHnIjmhwU3c3N9XlBJmw_KpT5emDaB8WlS01EMx1TM9nyiabI_k0cBeRzIpa6Thnfys9x5v816mqVSyC0cYNFwKJgVd-7o_XLyTMIOn8irTD-n-yg')"></div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[120px]">
+<!-- Audit & Assurance -->
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg p-6 hover:ambient-shadow transition-shadow duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-6 text-heritage-navy">
+<span class="material-symbols-outlined" data-weight="fill">fact_check</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">Audit &amp; Assurance</h2>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Statutory Audits</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Internal Audits</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Special Purpose Audits</span>
+</li>
+</ul>
+</div>
+<!-- Tax Advisory -->
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg p-6 hover:ambient-shadow transition-shadow duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-6 text-heritage-navy">
+<span class="material-symbols-outlined" data-weight="fill">account_balance</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">Tax Advisory</h2>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Corporate Tax Structuring</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>VAT Compliance &amp; Planning</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Personal Income Tax</span>
+</li>
+</ul>
+</div>
+<!-- Business Advisory -->
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg p-6 hover:ambient-shadow transition-shadow duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-6 text-heritage-navy">
+<span class="material-symbols-outlined" data-weight="fill">insights</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">Business Advisory</h2>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Feasibility Studies</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Financial Modeling</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Mergers &amp; Acquisitions (M&amp;A)</span>
+</li>
+</ul>
+</div>
+<!-- Accounting & Outsourcing -->
+<div class="bg-surface-container-lowest border border-surface-muted rounded-lg p-6 hover:ambient-shadow transition-shadow duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-[2px] bg-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-6 text-heritage-navy">
+<span class="material-symbols-outlined" data-weight="fill">receipt_long</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">Accounting &amp; Outsourcing</h2>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Payroll Management</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Financial Statement Preparation</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-[2px]">check</span>
+<span>Bookkeeping Services</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-muted border border-legacy-gold/10 rounded-xl p-8 md:p-12 text-center flex flex-col items-center justify-center max-w-3xl mx-auto mb-16 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-legacy-gold/5 rounded-bl-full"></div>
+<div class="absolute bottom-0 left-0 w-24 h-24 bg-heritage-navy/5 rounded-tr-full"></div>
+<h2 class="font-headline-md text-headline-md text-heritage-navy mb-4 relative z-10">Ready to secure your financial legacy?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-lg relative z-10">
+                Partner with us for precise, compliant, and strategic financial guidance tailored to your unique business needs.
+            </p>
+<button class="bg-professional-cyan hover:bg-professional-cyan/90 text-on-tertiary font-label-md text-label-md px-8 py-4 rounded-lg transition-colors active:scale-95 relative z-10 flex items-center gap-2">
+                Request a Proposal
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface dark:bg-surface-container-high border-t border-legacy-gold/30 flat no shadows flex justify-around items-center h-16 pb-safe w-full fixed bottom-0 w-full z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-legacy-gold scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<!-- Active Tab: Services -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="fill">payments</span>
+<span class="font-label-sm text-label-sm">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-legacy-gold scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1">article</span>
+<span class="font-label-sm text-label-sm">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-legacy-gold scale-95 transition-transform w-16" href="#">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="font-label-sm text-label-sm">Contact</span>
+</a>
+</nav>
+<!-- Standard Footer -->
+<footer class="bg-surface-container-lowest border-t border-legacy-gold/30 pt-16 pb-24 md:pb-16 px-margin-mobile md:px-gutter-desktop mt-auto">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-navy tracking-tight flex items-center gap-2 mb-4">
+<img alt="Legacy CPA Logo" class="h-8 w-8 object-contain grayscale opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCclkOHOnIj2YOrVMs-mtxW5t43fNYvu35zB5yoi9CK7R_BBkXiclMysAqVnwreY5ycIQnjJWzpGYWiIRO2pRsIXwDoSsvg5P3yh-88jiECSmZrRq-WaUpb-OQKv7LkVfMnCL8c56kyXAqY6YZzm5eT2R5VjJKIQ6MNRFGQLhP6DCN_JaRRO8v-zHtsRx2TcFR0b5cyP5DVruLrJfPVpad-TU5TMhKp6XChySqETANK0aOgvWpC11kyamG79eZij7W45Vc"/>
+                    LEGACY CPA
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">
+                    Precision-engineered financial solutions for Tanzanian businesses.
+                </p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-heritage-navy mb-4 uppercase tracking-wider">Services</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li><a class="hover:text-legacy-gold transition-colors" href="#">Audit &amp; Assurance</a></li>
+<li><a class="hover:text-legacy-gold transition-colors" href="#">Tax Advisory</a></li>
+<li><a class="hover:text-legacy-gold transition-colors" href="#">Business Advisory</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-heritage-navy mb-4 uppercase tracking-wider">Company</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li><a class="hover:text-legacy-gold transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-legacy-gold transition-colors" href="#">Insights</a></li>
+<li><a class="hover:text-legacy-gold transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-heritage-navy mb-4 uppercase tracking-wider">Connect</h4>
+<ul class="space-y-3 font-body-md text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>Dar es Salaam, TZ</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>contact@legacycpa.co.tz</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto mt-12 pt-8 border-t border-surface-muted text-center font-label-sm text-label-sm text-on-surface-variant opacity-60">
+            © 2024 Legacy CPA. All rights reserved.
+        </div>
+</footer>
+</body></html>

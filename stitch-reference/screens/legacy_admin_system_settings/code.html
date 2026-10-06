@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legacy CPA - System Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#44474e",
+                      "on-tertiary-fixed": "#001f23",
+                      "on-surface": "#1b1c1c",
+                      "on-tertiary-fixed-variant": "#004f56",
+                      "surface-container-highest": "#e4e2e1",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f0eded",
+                      "on-primary-fixed": "#001b3d",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#e9c176",
+                      "secondary-container": "#fed488",
+                      "surface": "#fbf9f8",
+                      "secondary": "#775a19",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#000d0f",
+                      "tertiary-container": "#00262a",
+                      "primary": "#000a1e",
+                      "inverse-on-surface": "#f3f0f0",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "tertiary-fixed-dim": "#43d9ea",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#d6e3ff",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary-container": "#708ab5",
+                      "primary-container": "#002147",
+                      "background": "#fbf9f8",
+                      "on-tertiary-container": "#0097a5",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#fbf9f8",
+                      "error": "#ba1a1a",
+                      "legacy-gold": "#C5A059",
+                      "primary-fixed-dim": "#aec7f6",
+                      "outline": "#74777f",
+                      "outline-variant": "#c4c6cf",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "surface-dim": "#dcd9d9",
+                      "on-secondary-fixed": "#261900",
+                      "tertiary-fixed": "#8ff2ff",
+                      "inverse-surface": "#303030",
+                      "charcoal-text": "#333333",
+                      "inverse-primary": "#aec7f6",
+                      "surface-muted": "#F6F5F5",
+                      "on-secondary-container": "#785a1a",
+                      "professional-cyan": "#2ACADB",
+                      "surface-container-high": "#eae8e7",
+                      "surface-variant": "#e4e2e1",
+                      "secondary-fixed": "#ffdea5",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#465f88",
+                      "error-container": "#ffdad6",
+                      "heritage-navy": "#002147",
+                      "on-background": "#1b1c1c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "section-gap": "120px",
+                      "base": "8px",
+                      "gutter-desktop": "24px",
+                      "margin-desktop": "80px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "64px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .ambient-shadow {
+            box-shadow: 0 20px 40px -10px rgba(0, 33, 71, 0.05); /* Heritage Navy tint */
+        }
+        .ambient-shadow:hover {
+             box-shadow: 0 20px 40px -10px rgba(0, 33, 71, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Rendered because Admin Panel acts as a top-level workspace in this context, or maybe suppress? The prompt implies an app shell. Let's render but adapt for admin.) -->
+<!-- Nav is suppressed as it's a focused task (settings), but we need branding. Let's build a focused admin header. -->
+<header class="bg-surface border-b border-heritage-navy/10 w-full top-0 sticky z-50">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<div class="flex items-center gap-4">
+<img alt="Legacy Logo" class="h-10 w-10 object-contain rounded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8c_yqChNZRDDa9y2FdtC3ifgldml-Lxx9sKAx2OxUB0x7OxX3DhLuhTVjtbUKo1qF5rKcdzyQxFSkA5XopSVunWUG3QdQkFDjgikGWd9Lf6c2kZ6-eDI7NAu19Qcwl8R3AJwOLPf7IrC5c8zI_KWHkRvvAQf8hQbIijDsoff3OPtBO3kJZ9LIvitu6gdjgGtDfFVtcz7Y7PtBo5Tqcoeof6skatWPapFl4xMoXnL9r1ohJJnJK2c_TCd00ELRwUUocQ4"/>
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-navy">Legacy Admin</div>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md text-heritage-navy pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-professional-cyan font-bold border-b-2 border-professional-cyan pb-1" href="#">System Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-heritage-navy cursor-pointer hover:text-professional-cyan transition-colors" data-icon="notifications">notifications</span>
+<div class="h-8 w-8 rounded-full bg-heritage-navy text-on-primary flex items-center justify-center font-label-md text-label-md">AD</div>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-[1280px] mx-auto w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col md:flex-row gap-gutter-desktop">
+<!-- Sidebar Navigation for Settings -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<nav class="flex flex-col gap-2 sticky top-28">
+<a class="flex items-center gap-3 px-4 py-3 rounded bg-surface-muted text-heritage-navy font-label-md text-label-md border-l-2 border-legacy-gold" href="#">
+<span class="material-symbols-outlined" data-icon="corporate_fare">corporate_fare</span>
+                    Firm Details
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-charcoal-text hover:bg-surface-muted transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Staff &amp; Permissions
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-charcoal-text hover:bg-surface-muted transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+                    Service Portfolio
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded text-charcoal-text hover:bg-surface-muted transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    System Preferences
+                </a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-grow max-w-4xl">
+<div class="mb-8">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-heritage-navy">Firm Details</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Manage central information, office locations, and public contact details for Legacy CPA.</p>
+</div>
+<!-- Bento Grid Style Form Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
+<!-- General Info Card -->
+<div class="col-span-1 md:col-span-2 bg-surface border border-surface-muted p-6 rounded ambient-shadow transition-shadow duration-300">
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy border-b border-legacy-gold/30 pb-4 mb-6">General Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Firm Name</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="text" value="Legacy CPA Tanzania"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Registration Number</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="text" value="NBAA/REG/2024/098"/>
+</div>
+<div class="flex flex-col gap-1 col-span-1 md:col-span-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Firm Description (Public Profile)</label>
+<textarea class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all resize-none" rows="3">A premier Tanzanian CPA firm providing authoritative financial, auditing, and advisory services to high-net-worth individuals and corporate entities.</textarea>
+</div>
+</div>
+</div>
+<!-- Primary Office Location -->
+<div class="bg-surface border border-surface-muted p-6 rounded ambient-shadow transition-shadow duration-300">
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy border-b border-legacy-gold/30 pb-4 mb-6">Primary Office</h2>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Street Address</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="text" value="Posta House, Ohio Street"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">City</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="text" value="Dar es Salaam"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Country</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="text" value="Tanzania"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Details -->
+<div class="bg-surface border border-surface-muted p-6 rounded ambient-shadow transition-shadow duration-300">
+<h2 class="font-headline-sm text-headline-sm text-heritage-navy border-b border-legacy-gold/30 pb-4 mb-6">Contact Channels</h2>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Primary Email</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="email" value="inquiries@legacycpa.co.tz"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Support Phone</label>
+<input class="w-full bg-surface-muted border border-heritage-navy/10 rounded px-4 py-2 font-body-md text-body-md text-on-surface focus:outline-none focus:border-professional-cyan focus:ring-1 focus:ring-professional-cyan transition-all" type="tel" value="+255 22 211 0000"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-8 flex justify-end gap-4 border-t border-legacy-gold/30 pt-6">
+<button class="px-6 py-2 rounded border border-heritage-navy font-label-md text-label-md text-legacy-gold hover:bg-surface-muted transition-colors">Discard Changes</button>
+<button class="px-6 py-2 rounded bg-professional-cyan font-label-md text-label-md text-on-primary hover:bg-opacity-90 transition-opacity shadow-sm">Save Configuration</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-muted border-t border-legacy-gold/30 w-full py-section-gap mt-auto">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter-desktop">
+<div class="col-span-1 md:col-span-4 flex justify-between items-center flex-wrap gap-4">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-navy">Legacy</div>
+<div class="text-charcoal-text font-body-md text-body-md">© 2024 Legacy CPA Tanzania. All rights reserved. Registered with NBAA.</div>
+<div class="flex gap-4">
+<a class="text-charcoal-text hover:text-legacy-gold transition-colors duration-200 font-body-md text-body-md" href="#">Dar es Salaam Office</a>
+<a class="text-charcoal-text hover:text-legacy-gold transition-colors duration-200 font-body-md text-body-md" href="#">NBAA Portal</a>
+<a class="text-charcoal-text hover:text-legacy-gold transition-colors duration-200 font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-charcoal-text hover:text-legacy-gold transition-colors duration-200 font-body-md text-body-md" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Staff &amp; Permissions - Legacy CPA Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "heritage-navy": "#002147",
+                        "legacy-gold": "#C5A059",
+                        "outline-variant": "#c4c6cf",
+                        "primary-container": "#002147",
+                        "inverse-on-surface": "#f3f0f0",
+                        "inverse-primary": "#aec7f6",
+                        "inverse-surface": "#303030",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d6e3ff",
+                        "tertiary-fixed-dim": "#43d9ea",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "tertiary": "#000d0f",
+                        "primary-fixed-dim": "#aec7f6",
+                        "surface-muted": "#F6F5F5",
+                        "on-surface-variant": "#44474e",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "surface-tint": "#465f88",
+                        "background": "#fbf9f8",
+                        "on-primary-container": "#708ab5",
+                        "on-tertiary-fixed": "#001f23",
+                        "outline": "#74777f",
+                        "secondary-fixed": "#ffdea5",
+                        "tertiary-container": "#00262a",
+                        "surface-container-high": "#eae8e7",
+                        "surface": "#fbf9f8",
+                        "secondary-container": "#fed488",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "professional-cyan": "#2ACADB",
+                        "error-container": "#ffdad6",
+                        "charcoal-text": "#333333",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#775a19",
+                        "on-tertiary-container": "#0097a5",
+                        "surface-bright": "#fbf9f8",
+                        "on-tertiary-fixed-variant": "#004f56",
+                        "primary": "#000a1e",
+                        "on-secondary-container": "#785a1a",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary-fixed": "#8ff2ff",
+                        "surface-variant": "#e4e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-highest": "#e4e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter-desktop": "24px",
+                        "base": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface h-full flex overflow-hidden antialiased text-on-surface"><aside class="w-64 bg-surface border-r border-heritage-navy/10 flex flex-col hidden md:flex sticky top-0 h-screen overflow-y-auto z-10"><div class="p-base"><div class="flex items-center gap-4 mb-12 mt-4 px-4"><img alt="Legacy Logo" class="w-10 h-10 object-contain rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2bwsCyGWM-wY6DXLSr35jBPzsYh3-l1RL3yiy6KVI_BmXThojrRYyZcDaCSDonpY2V6b25sUGfebP4REOsJv5QhB23GXgP7CBi7Ozn0f6YzPZ_Lsy1sjgz0R0ajFT0fd0ZibI33Q5jOm6ZtFjS2Sa4CQqEurb7L8VrYI34S0HZ7lnTnkb4ZXAWFexfxdkldfpk1RamRJ6L7ixwnxdRxlMAyBZMyjE8nHj_faMSueHetMIWXqBcysfBM2HcKkhvLvRLhk"/><span class="font-headline-sm text-headline-sm text-heritage-navy font-bold">Legacy</span></div><nav class="flex flex-col gap-2 px-2"><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="{{DATA:SCREEN:SCREEN_7}}"><span class="material-symbols-outlined">dashboard</span>Dashboard</a><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="{{DATA:SCREEN:SCREEN_5}}"><span class="material-symbols-outlined">receipt_long</span>Orders</a><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="{{DATA:SCREEN:SCREEN_6}}"><span class="material-symbols-outlined">group</span>Clients</a><a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-muted text-professional-cyan font-label-md text-label-md font-bold shadow-[0_4px_20px_rgba(42,202,219,0.08)]" href="{{DATA:SCREEN:SCREEN_2}}"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">badge</span>Staff</a><a class="flex items-center gap-3 px-4 py-3 rounded-lg text-charcoal-text hover:bg-surface-muted hover:text-professional-cyan transition-colors duration-200 font-label-md text-label-md" href="{{DATA:SCREEN:SCREEN_4}}"><span class="material-symbols-outlined">settings</span>System Settings</a></nav></div><div class="mt-auto p-6 border-t border-heritage-navy/10"><div class="flex items-center gap-3 cursor-pointer group"><div class="w-8 h-8 rounded-full bg-professional-cyan text-white flex items-center justify-center font-bold">A</div><div class="flex-1"><div class="font-label-md text-label-md text-heritage-navy group-hover:text-professional-cyan transition-colors">Admin User</div><div class="font-label-sm text-label-sm text-outline">Partner</div></div><span class="material-symbols-outlined text-outline group-hover:text-professional-cyan transition-colors">logout</span></div></div></aside>
+<!-- Navigation suppressed due to linear/transactional admin view context or missing JSON nav definitions matching this screen -->
+<main class="flex-1 flex flex-col h-full overflow-hidden">
+<!-- Header -->
+<header class="bg-surface border-b border-heritage-navy/10 py-6 px-8 md:px-margin-desktop flex flex-col md:flex-row md:items-center justify-between shrink-0"><div class="flex items-center justify-between w-full md:hidden mb-4"><div class="flex items-center gap-3"><img alt="Legacy Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXoydLHyxNGr1JH8ETdkAU4SXLIUMcBHgPqsZSSznpfi4jc-oZyNanYuATzYoBNe8gg_yPvBtpwqtxig-o6cWW09KZ6gxslcmyKoc_o4UCmf4tetAIDzeFgmFYRx-ZvmtQxpeyaHHMa3ISp0wVQIijTnOiQxMzMzK6hcrLbVk6oM0KYcDj262Aho2PBnjlL_WJdrr1C4OEbK84J8ul93UO0JjTkBmOnWQ_2RGAOnqiS6uVwhUmfZlADq9CXZgWXZ1ouf4"/><span class="font-headline-sm text-headline-sm text-heritage-navy font-bold">Legacy</span></div><button class="text-heritage-navy"><span class="material-symbols-outlined text-3xl">menu</span></button></div>
+<div class="mb-4 md:mb-0">
+<h1 class="font-headline-md text-headline-md text-heritage-navy">Staff &amp; Permissions</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage firm personnel, professional credentials, and system access levels.</p>
+</div>
+<div>
+<button class="bg-professional-cyan text-on-tertiary font-label-md text-label-md px-6 py-3 rounded hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Team Member
+                </button>
+</div>
+</header>
+<!-- Content Canvas -->
+<div class="flex-1 overflow-y-auto p-8 md:p-margin-desktop bg-surface-muted/50">
+<div class="max-w-[1280px] mx-auto space-y-8">
+<!-- Tabs (Mocked for layout context) -->
+<div class="border-b border-heritage-navy/10 flex gap-8">
+<button class="pb-3 border-b-2 border-professional-cyan font-label-md text-label-md text-heritage-navy">Directory</button>
+<button class="pb-3 border-b-2 border-transparent font-label-md text-label-md text-on-surface-variant hover:text-heritage-navy transition-colors">Access Roles</button>
+<button class="pb-3 border-b-2 border-transparent font-label-md text-label-md text-on-surface-variant hover:text-heritage-navy transition-colors">Department Permissions</button>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-col md:flex-row gap-4 justify-between items-center bg-surface p-4 border border-heritage-navy/10 rounded">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-muted border border-outline-variant rounded focus:outline-none focus:border-legacy-gold font-body-md text-body-md text-heritage-navy" placeholder="Search staff..." type="text"/>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<select class="bg-surface-muted border border-outline-variant rounded px-4 py-2 font-body-md text-body-md text-heritage-navy focus:outline-none focus:border-legacy-gold">
+<option>All Departments</option>
+<option>Audit &amp; Assurance</option>
+<option>Tax Services</option>
+</select>
+<select class="bg-surface-muted border border-outline-variant rounded px-4 py-2 font-body-md text-body-md text-heritage-navy focus:outline-none focus:border-legacy-gold">
+<option>All Statuses</option>
+<option>Active</option>
+<option>On Leave</option>
+</select>
+</div>
+</div>
+<!-- Directory Table -->
+<div class="bg-surface border border-heritage-navy/10 rounded overflow-hidden overflow-x-auto">
+<table class="w-full text-left border-collapse" style="min-width: 800px;">
+<thead>
+<tr class="border-b border-heritage-navy/10 bg-surface-muted/30">
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Name &amp; Title</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Department</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Access Level</th>
+<th class="py-4 px-6 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-heritage-navy/10">
+<tr class="hover:bg-surface-muted/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-tint flex items-center justify-center text-on-primary font-label-md overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of an African male managing partner in a sharp navy suit against a clean, light corporate background. Lighting is bright, high-key, conveying authority and modernity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz4paaG_BnaVCbG1lQkaGeswdlyzYlefqub6ovN_8rdCPkMlw5Cy3sHt-9TM4Cs6GjITLUdIdLw4n0CiGnCcmhDbDaibtmg1hpfO07eji295WIma8aHFWQ9rQidIWgYt65Z194OkHcCwvA-HuisE1wsrqU_D6flfmMC5ZC7e1lnW9sZ1Y2TmbLobTottBz-a9Furu4ETIOawgmEEJyiXlMP0aiq03YfFLGWGESA0FT7HAx2lVKTJ3JdA"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-heritage-navy">Ephraim Mushi</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Managing Partner</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-heritage-navy">Executive</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-fixed text-on-primary-fixed-variant">Active</span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-heritage-navy">Administrator</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-legacy-gold p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-on-surface-variant hover:text-heritage-navy p-1" title="Reset Password">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-muted/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-tint flex items-center justify-center text-on-primary font-label-md overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a female tax partner in modern business attire in an office setting. Neutral background, soft bright lighting, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDik2MXJ35DEoYssbtnzobTm0k0IxTMtfc-xBnd0xn9ypLikS63-17xSh6iC9YbL5zGoDqOqCmXKo12anWS2yJhtmXI0jiGn2ihSCv8HzaMHtxu3N-1rPTQp9iCQUkpu_8IRLS-H7ICLIr5LxuKMcOsU0JkayzZ2swz8G-UKQWwKikbug6ZS8_sG3ofUChy5wKlTaV4JS7die2gci0hnr57D9JHaVi93n2oV4aGrTIWYsEZYFySDQdukg"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-heritage-navy">Sarah Nyerere</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Tax Partner</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-heritage-navy">Tax Services</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-fixed text-on-primary-fixed-variant">Active</span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-heritage-navy">Partner</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-legacy-gold p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-on-surface-variant hover:text-heritage-navy p-1" title="Reset Password">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-muted/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-tint flex items-center justify-center text-on-primary font-label-md overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a male associate in a white shirt and dark tie, looking professional in a minimal corporate environment. High key lighting, sharp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdQXC9CKJ82wEyaq7Shm5FwHzcz0oMkULjoYbIa79X2H4yhRTbnUVu2-EqkanPX-60PTZR8HyOn4aa7LEegIrF9FEy3uefSvbLukGkqP4TraY5upma6IZM17JazUKeNDUYcfDLwjeENUAwoKcvRmWEy7Ci-XV_4n9EfWD-t1tP5Y7jhUjnzgHwllx8SXyZnnqLAzRPkSCP4f5A64jHpszotEgonpQ8z7QUBRUj2I85W1xjhW1IBSAE6Q"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-heritage-navy">John Doe</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Senior Associate</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-heritage-navy">Audit &amp; Assurance</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-surface-container-high text-on-surface-variant">On Leave</span>
+</td>
+<td class="py-4 px-6 font-body-md text-body-md text-heritage-navy">Associate</td>
+<td class="py-4 px-6 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-legacy-gold p-1" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-on-surface-variant hover:text-heritage-navy p-1" title="Reset Password">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body></html>

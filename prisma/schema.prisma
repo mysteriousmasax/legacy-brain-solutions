@@ -1,0 +1,345 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum UserType {
+  ADMIN
+  STAFF
+  CLIENT
+}
+
+enum EngagementStatus {
+  INQUIRY
+  ACTIVE
+  REVIEW
+  COMPLETE
+  ARCHIVED
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  WON
+  LOST
+}
+
+enum DocumentStatus {
+  PENDING_REVIEW
+  REVIEW
+  APPROVED
+  REJECTED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PARTIALLY_PAID
+  PAID
+  OVERDUE
+}
+
+enum PartnerLogoType {
+  INSTITUTIONAL
+  CLIENT
+}
+
+model User {
+  id              String              @id @default(cuid())
+  email           String              @unique
+  passwordHash    String
+  name            String
+  avatarKey       String?
+  type            UserType
+  roleId          String?
+  role            Role?               @relation(fields: [roleId], references: [id])
+  clientAccountId String?
+  clientAccount   ClientAccount?      @relation(fields: [clientAccountId], references: [id])
+  assignments     EngagementAssignment[]
+  headedDepartment Department?        @relation("DepartmentHead")
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+  activities      ActivityEvent[]
+}
+
+model Role {
+  id          String          @id @default(cuid())
+  name        String          @unique
+  description String?
+  users       User[]
+  permissions RolePermission[]
+}
+
+model Permission {
+  id                 String                @id @default(cuid())
+  key                String                @unique
+  description        String?
+  rolePermissions    RolePermission[]
+  departmentPermissions DepartmentPermission[]
+}
+
+model RolePermission {
+  roleId       String
+  permissionId String
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model Department {
+  id          String                 @id @default(cuid())
+  name        String                 @unique
+  headId      String?                @unique
+  head        User?                  @relation("DepartmentHead", fields: [headId], references: [id])
+  permissions DepartmentPermission[]
+}
+
+model DepartmentPermission {
+  departmentId String
+  permissionId String
+  department   Department @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([departmentId, permissionId])
+}
+
+model ClientAccount {
+  id          String      @id @default(cuid())
+  name        String
+  industry    String?
+  email       String?
+  phone       String?
+  status      String      @default("ACTIVE")
+  users       User[]
+  engagements Engagement[]
+  documents   Document[]
+  invoices    Invoice[]
+  messages    Message[]
+  createdAt   DateTime    @default(now())
+}
+
+model Engagement {
+  id          String               @id @default(cuid())
+  reference   String               @unique
+  clientId    String
+  service     String
+  status      EngagementStatus     @default(INQUIRY)
+  dueDate     DateTime?
+  client      ClientAccount        @relation(fields: [clientId], references: [id])
+  assignments EngagementAssignment[]
+  tasks       WorkflowTask[]
+  documents   Document[]
+  createdAt   DateTime             @default(now())
+  updatedAt   DateTime             @updatedAt
+}
+
+model EngagementAssignment {
+  engagementId String
+  userId       String
+  engagement   Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([engagementId, userId])
+}
+
+model WorkflowTask {
+  id          String    @id @default(cuid())
+  engagementId String
+  title       String
+  status      String    @default("OPEN")
+  dueDate     DateTime?
+  engagement Engagement @relation(fields: [engagementId], references: [id], onDelete: Cascade)
+}
+
+model Document {
+  id          String          @id @default(cuid())
+  name        String
+  storageKey  String
+  mimeType    String
+  size        Int
+  status      DocumentStatus  @default(PENDING_REVIEW)
+  clientId    String
+  engagementId String?
+  client      ClientAccount   @relation(fields: [clientId], references: [id])
+  engagement Engagement?    @relation(fields: [engagementId], references: [id])
+  versions    DocumentVersion[]
+  createdAt   DateTime        @default(now())
+}
+
+model DocumentVersion {
+  id          String   @id @default(cuid())
+  documentId  String
+  storageKey  String
+  size        Int
+  createdAt   DateTime @default(now())
+  document    Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+}
+
+model Article {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  excerpt     String
+  body        String
+  category    String
+  publishedAt DateTime?
+  author      String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Service {
+  id      String  @id @default(cuid())
+  slug    String  @unique
+  name    String
+  summary String
+  body    String
+  active  Boolean @default(true)
+}
+
+model TeamMember {
+  id        String  @id @default(cuid())
+  name      String
+  title     String
+  bio       String?
+  email     String?
+  imageKey  String?
+  active    Boolean @default(true)
+}
+
+model Office {
+  id      String  @id @default(cuid())
+  name    String
+  address String
+  phone   String
+  email   String
+  hours   String
+  mapUrl  String?
+}
+
+model ContactInquiry {
+  id        String      @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  service   String?
+  message   String
+  status    LeadStatus  @default(NEW)
+  createdAt DateTime    @default(now())
+}
+
+model ProposalRequest {
+  id        String      @id @default(cuid())
+  company   String
+  industry  String?
+  size      String?
+  services  Json
+  scope     String
+  timeline  String?
+  budget    String?
+  name      String
+  email     String
+  phone     String?
+  status    LeadStatus  @default(NEW)
+  createdAt DateTime    @default(now())
+}
+
+model NewsletterSubscription {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ClientApplication {
+  id        String      @id @default(cuid())
+  company   String
+  sector    String?
+  services  Json
+  name      String
+  email     String
+  phone     String?
+  status    LeadStatus  @default(NEW)
+  createdAt DateTime    @default(now())
+}
+
+model Invoice {
+  id        String       @id @default(cuid())
+  number    String       @unique
+  clientId  String
+  amount    Decimal
+  currency  String       @default("TZS")
+  status    InvoiceStatus @default(DRAFT)
+  dueDate   DateTime
+  client    ClientAccount @relation(fields: [clientId], references: [id])
+  payments  Payment[]
+  createdAt DateTime     @default(now())
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  invoiceId  String
+  amount    Decimal
+  reference String?
+  provider  String?
+  status    String   @default("PENDING")
+  invoice   Invoice  @relation(fields: [invoiceId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Message {
+  id        String        @id @default(cuid())
+  clientId  String
+  senderId  String?
+  subject   String?
+  body      String
+  readAt    DateTime?
+  client    ClientAccount @relation(fields: [clientId], references: [id])
+  createdAt DateTime      @default(now())
+}
+
+model ActivityEvent {
+  id        String    @id @default(cuid())
+  actorId   String?
+  action    String
+  entity    String
+  entityId  String?
+  metadata  Json?
+  actor     User?     @relation(fields: [actorId], references: [id])
+  createdAt DateTime  @default(now())
+}
+
+model FirmSettings {
+  id            String   @id @default(cuid())
+  firmName      String
+  registrationNo String?
+  description   String?
+  address       String?
+  city          String?
+  country       String   @default("Tanzania")
+  email         String?
+  phone         String?
+  updatedAt     DateTime @updatedAt
+}
+
+model PartnerLogo {
+  id        String          @id @default(cuid())
+  name      String
+  type      PartnerLogoType
+  imageKey  String?
+  website   String?
+  sortOrder Int             @default(0)
+  active    Boolean         @default(true)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([type, active, sortOrder])
+}

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dar es Salaam Office - Legacy CPAs Tanzania</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#000d0f",
+                    "inverse-on-surface": "#f3f0f0",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dcd9d9",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#001f23",
+                    "heritage-navy": "#002147",
+                    "on-tertiary-fixed-variant": "#004f56",
+                    "primary-fixed-dim": "#aec7f6",
+                    "on-error-container": "#93000a",
+                    "secondary": "#775a19",
+                    "primary": "#000a1e",
+                    "on-secondary-fixed": "#261900",
+                    "tertiary-fixed": "#8ff2ff",
+                    "inverse-surface": "#303030",
+                    "charcoal-text": "#333333",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#eae8e7",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "outline": "#74777f",
+                    "legacy-gold": "#C5A059",
+                    "tertiary-container": "#00262a",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-primary": "#aec7f6",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "surface-tint": "#465f88",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#785a1a",
+                    "surface-container-highest": "#e4e2e1",
+                    "surface-container": "#f0eded",
+                    "on-primary-container": "#708ab5",
+                    "on-surface-variant": "#44474e",
+                    "on-primary": "#ffffff",
+                    "surface-muted": "#F6F5F5",
+                    "outline-variant": "#c4c6cf",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1b1c1c",
+                    "on-tertiary-container": "#0097a5",
+                    "tertiary-fixed-dim": "#43d9ea",
+                    "on-background": "#1b1c1c",
+                    "background": "#fbf9f8",
+                    "surface-bright": "#fbf9f8",
+                    "on-primary-fixed": "#001b3d",
+                    "on-error": "#ffffff",
+                    "primary-container": "#002147",
+                    "professional-cyan": "#2ACADB",
+                    "surface-container-low": "#f6f3f2",
+                    "surface": "#fbf9f8",
+                    "secondary-container": "#fed488",
+                    "surface-variant": "#e4e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter-desktop": "24px",
+                    "base": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "40px",
+                            {
+                                    "lineHeight": "48px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "56px",
+                            {
+                                    "lineHeight": "64px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 33, 71, 0.08); /* Heritage Navy tint */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased font-body-md flex flex-col min-h-screen">
+<!-- TopNavBar from Shared Components -->
+<header class="bg-surface dark:bg-primary-container fixed top-0 w-full z-50 transition-all duration-300 border-b border-surface-muted" id="main-header">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Brand -->
+<a class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-primary-fixed" href="/">
+<img alt="Legacy Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi1fnnhyoGYng7E2llmnu6PeGvI1aDd_1MjLQVubMQZNaPlelt0lB9seRO3CgPiAOun5846jA-5cgBsyxKSInot9AIt2IQ-5zKUMQVKzN6BAn2suWp6oqoqQFKgI7ePj_ZT3BSUQQcYHqNTfiJGfE7P2ankIYljoWul-MxgnvT1xJDWcR9p4VGSssseuBuHjyZrtsxp8wDNh3UF_i-PmZSwlKD9LT1-tP44CjwFR3pQAnHO2sJPB1dOpwNSQQfWobbDJ0"/>
+</a>
+<!-- Navigation (Desktop) -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300 cursor-pointer font-body-md text-body-md" href="/home">Home</a>
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300 cursor-pointer font-body-md text-body-md" href="/about">About Us</a>
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300 cursor-pointer font-body-md text-body-md" href="/services">Services</a>
+<a class="text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300 cursor-pointer font-body-md text-body-md" href="/news">News</a>
+<a class="text-legacy-gold font-bold border-b-2 border-legacy-gold pb-1 cursor-pointer font-body-md text-body-md" href="/contact">Contact</a>
+</nav>
+<!-- Action -->
+<div class="hidden md:flex">
+<a class="px-6 py-2.5 bg-professional-cyan text-white font-label-md text-label-md rounded hover:opacity-90 transition-opacity flex items-center" href="#">
+                    Client Portal
+                </a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface focus:outline-none">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-20">
+<!-- Hero Section -->
+<section class="relative pt-16 md:pt-24 pb-20 md:pb-32 px-margin-mobile md:px-margin-desktop bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-gutter-desktop items-center">
+<div class="md:col-span-7 z-10">
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-heritage-navy mb-4 md:mb-6">
+                        Our Dar es Salaam Headquarters
+                    </h1>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-2xl mb-8 md:mb-10">
+                        Strategically located in the commercial heart of Tanzania, our Dar es Salaam office serves as the central hub for Legacy's operations. We provide premier accounting, tax, and advisory services to national and international clients navigating East Africa's dynamic markets.
+                    </p>
+<a class="inline-flex items-center space-x-2 text-legacy-gold hover:text-heritage-navy transition-colors border-b border-legacy-gold pb-1 font-label-md text-label-md" href="#contact-info">
+<span>Get Directions</span>
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+<div class="md:col-span-5 relative mt-8 md:mt-0">
+<div class="aspect-[4/5] rounded border border-surface-muted overflow-hidden relative">
+<img alt="Dar es Salaam Office Building" class="object-cover w-full h-full" data-alt="A sophisticated architectural photograph of a modern office building exterior in Dar es Salaam, Tanzania during golden hour. The building features sleek glass facades reflecting the sunset, communicating corporate prestige and modern business. The style is professional, high-resolution, and slightly desaturated to fit a 'heritage modernism' aesthetic, emphasizing stability and excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeoKuOMJH4WW5oGa7IP8UreCuYJjRkaMYeIE2FcQoSTBeqXIYTQxAvB2G0XrbI1RHlcqmoHO4WD5DtifvvO6fcDLySI4-KlFHkMJ9kMjyuKWdUyx1wFdgz0L1ye8nZY8U-kGwSZWe7SK3iQzHIGaikvUjczEdmkMF-0849vvfNsv_yVjJWY5RNooLideTG1DGEtno9lXZNKN6-7C41n9NtDkKTnR_gPxAfZ7iWOxc7zuG9_MsDtopYdQ"/>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -left-6 w-24 h-24 bg-surface-muted border border-legacy-gold/30 rounded z-[-1] hidden md:block"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-legacy-gold/30 max-w-7xl mx-auto"></div>
+<!-- Contact & Map Section -->
+<section class="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="contact-info">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-gutter-desktop">
+<!-- Contact Details -->
+<div class="lg:col-span-4 flex flex-col justify-center pr-0 lg:pr-12">
+<h2 class="font-headline-sm md:font-headline-md text-headline-sm md:text-headline-md text-heritage-navy mb-6 md:mb-8">Visit Our Office</h2>
+<div class="space-y-6 md:space-y-8">
+<div class="flex items-start">
+<span class="material-symbols-outlined text-legacy-gold mt-1 mr-4">location_on</span>
+<div>
+<h3 class="font-label-md text-label-md text-heritage-navy mb-1 uppercase tracking-wider">Address</h3>
+<p class="font-body-md text-body-md text-on-surface-variant break-words">
+                                        Legacy Tower, 4th Floor<br/>
+                                        Haile Selassie Road, Oysterbay<br/>
+                                        Dar es Salaam, Tanzania
+                                    </p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-legacy-gold mt-1 mr-4">call</span>
+<div>
+<h3 class="font-label-md text-label-md text-heritage-navy mb-1 uppercase tracking-wider">Phone</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        +255 (0) 22 211 0000<br/>
+                                        +255 (0) 754 000 000
+                                    </p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-legacy-gold mt-1 mr-4">mail</span>
+<div>
+<h3 class="font-label-md text-label-md text-heritage-navy mb-1 uppercase tracking-wider">Email</h3>
+<p class="font-body-md text-body-md text-on-surface-variant break-all">
+                                        dar@legacycpas.co.tz<br/>
+                                        info@legacycpas.co.tz
+                                    </p>
+</div>
+</div>
+<div class="flex items-start">
+<span class="material-symbols-outlined text-legacy-gold mt-1 mr-4">schedule</span>
+<div>
+<h3 class="font-label-md text-label-md text-heritage-navy mb-1 uppercase tracking-wider">Business Hours</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                        Monday - Friday: 8:00 AM - 5:00 PM<br/>
+                                        Saturday &amp; Sunday: Closed
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Integration -->
+<div class="lg:col-span-8 mt-8 lg:mt-0">
+<div class="w-full h-[350px] md:h-[500px] bg-surface-muted border border-heritage-navy/10 rounded overflow-hidden relative group">
+<!-- Placeholder for Map -->
+<img alt="Map of Oysterbay, Dar es Salaam" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" data-location="Dar es Salaam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoGW7j7xB0Do4UIdbJs9cUL5WeKl7XeAtaHxI5kR6irTN1FOweckgXNz7iVDO5P-WnIAhlOfqD-7v2D-45jK9v3zYarbewFcHZOhV7swJPZnGqleoYras4PX-kn99fLOuDFZdx9kZgFXqCoLMZvA_WaUWZq0LjpZexHJhvF1rsKMUZlZo5L1hRrcOdH3f1QAds0VSN_wC7ReMgHt4IBjRTwOAhTzpjEeoEDPlbUal42llphuMVVPg9Ug"/>
+<!-- Location Pin Overlay -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-surface p-3 rounded-full shadow-lg border border-legacy-gold/30 flex items-center justify-center animate-bounce">
+<span class="material-symbols-outlined text-heritage-navy" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-legacy-gold/30 max-w-7xl mx-auto"></div>
+<!-- Services Highlight -->
+<section class="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-muted/50">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
+<h2 class="font-headline-sm md:font-headline-lg text-headline-sm md:text-headline-lg text-heritage-navy mb-4">Core Competencies</h2>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant">The Dar es Salaam office spearheads our most complex corporate engagements, offering specialized expertise tailored to large enterprises and multinational corporations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter-desktop">
+<!-- Service Card 1 -->
+<div class="bg-surface p-6 md:p-8 border border-heritage-navy/10 rounded hover:ambient-shadow transition-shadow duration-300">
+<div class="w-12 h-12 bg-primary-fixed/20 rounded flex items-center justify-center mb-6 border border-heritage-navy/10">
+<span class="material-symbols-outlined text-heritage-navy">account_balance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">Corporate Tax Advisory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Navigating complex Tanzanian tax regulations, transfer pricing, and cross-border tax structuring for multinational entities.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface p-6 md:p-8 border border-heritage-navy/10 rounded hover:ambient-shadow transition-shadow duration-300">
+<div class="w-12 h-12 bg-primary-fixed/20 rounded flex items-center justify-center mb-6 border border-heritage-navy/10">
+<span class="material-symbols-outlined text-heritage-navy">fact_check</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">International Audit</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Comprehensive statutory and IFRS audits, ensuring rigorous compliance and financial transparency for public and private corporations.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface p-6 md:p-8 border border-heritage-navy/10 rounded hover:ambient-shadow transition-shadow duration-300">
+<div class="w-12 h-12 bg-primary-fixed/20 rounded flex items-center justify-center mb-6 border border-heritage-navy/10">
+<span class="material-symbols-outlined text-heritage-navy">handshake</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">M&amp;A Consulting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Financial due diligence, valuation, and strategic advisory for mergers, acquisitions, and restructuring in the East African market.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-legacy-gold/30 max-w-7xl mx-auto"></div>
+<!-- Local Leadership -->
+<section class="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="mb-10 md:mb-16">
+<h2 class="font-headline-sm md:font-headline-lg text-headline-sm md:text-headline-lg text-heritage-navy mb-4">Meet the Local Leadership</h2>
+<p class="font-body-md md:font-body-lg text-body-md md:text-body-lg text-on-surface-variant max-w-2xl">Our Dar es Salaam team is led by seasoned professionals with deep roots in the Tanzanian financial sector, bringing decades of combined experience to every client engagement.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+<!-- Profile 1 -->
+<div class="flex flex-col md:flex-row gap-6 md:gap-8 group">
+<div class="w-full md:w-48 h-64 flex-shrink-0 border border-surface-muted rounded overflow-hidden">
+<img alt="Ephraim Mushi" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional environmental portrait of a distinguished African male executive (Ephraim Mushi) in his 50s, wearing a tailored navy suit. He is standing in a modern, well-lit office with a subtle view of Dar es Salaam in the background out of focus. Lighting is natural and soft, conveying authority, wisdom, and accessibility within a sophisticated corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzW5v2cPcJvqGzArt4z4PhQLSNlVibN3TIstkOqKs6i75oxR7C4yUkRw3nnbqxm9XJeq3IivAGneqJTD0AUufgydqvvvsdDD0r4TCLLsslesG0MkXsK4FUwwHIfeLYtcH3dPysXk7SUaLnBwIVxi18J5XHxblzmc5EZVOfpkm78kswJ3D4EiMAymfIDszaJD46a4-5EnSPDrwierT-_D4pIVEbVncYPglbcscIuVc8bGz9EHdM8jbbHg"/>
+</div>
+<div class="flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-heritage-navy mb-1">Ephraim Mushi</h3>
+<p class="font-label-md text-label-md text-legacy-gold mb-4 uppercase tracking-widest">Managing Partner</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">With over 25 years of experience in audit and advisory, Ephraim oversees the strategic direction of the Dar es Salaam office. He specializes in large-scale corporate audits and has served on several national economic advisory boards.</p>
+<a class="inline-flex items-center text-heritage-navy hover:text-legacy-gold transition-colors font-label-md break-all" href="#">
+<span class="material-symbols-outlined mr-2 text-sm flex-shrink-0">mail</span>
+                                e.mushi@legacycpas.co.tz
+                            </a>
+</div>
+</div>
+<!-- Profile 2 -->
+<div class="flex flex-col md:flex-row gap-6 md:gap-8 group">
+<div class="w-full md:w-48 h-64 flex-shrink-0 border border-surface-muted rounded overflow-hidden">
+<img alt="Grace Shirima" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional environmental portrait of a confident African female executive (Grace Shirima) in her 40s, wearing elegant professional business attire. She is seated at a modern glass conference table with architectural blueprints or financial documents subtly visible. Lighting is crisp and modern, reflecting a pristine corporate environment consistent with a legacy brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnV6yiUsmaNLXBzc3nCbnYv8x5hGNogqThSuIF7QtFZGIDphAWiPGa-b-es-UPjI_DL9_s4HJLwIy4v7iP7Am1n4iA0F9LkvuDUqjlR-BoOsIlMx9yM7rGdw02pIFb5zs6b7BMB-c_Bn2-dDiQ0Ww7fGyWbHK3bJlwQ_F-AVYAnl8wguc_Sc4ki703-7cpPnxLY-7IkCtQJ7Mw0VV0DCcast-3cU-ycPzPwVtBrKpGcfQ3BKkZhZ9Grw"/>
+</div>
+<div class="flex flex-col justify-center">
+<h3 class="font-headline-md text-headline-md text-heritage-navy mb-1">Grace Shirima</h3>
+<p class="font-label-md text-label-md text-legacy-gold mb-4 uppercase tracking-widest">Director of Tax Services</p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Grace leads our tax practice in Dar es Salaam. A former senior official at the revenue authority, she brings unparalleled insight into Tanzanian tax law, providing strategic counsel to multinational corporations and high-net-worth individuals.</p>
+<a class="inline-flex items-center text-heritage-navy hover:text-legacy-gold transition-colors font-label-md break-all" href="#">
+<span class="material-symbols-outlined mr-2 text-sm flex-shrink-0">mail</span>
+                                g.shirima@legacycpas.co.tz
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="bg-tertiary-container dark:bg-tertiary-container w-full py-10 md:py-section-gap border-t border-legacy-gold/30">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-gutter-desktop px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col space-y-4">
+<div class="flex items-center gap-2">
+<img alt="Legacy Logo" class="h-8 w-auto brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRFzKv9_nS2Rmy4ozSBL5HUNZmE7PJkhFNUfISAWZtu3NVrNpOApHfMA2rR_C2nexiv9Xc7ogJpPM8oVSvA9xuotB4uL4WYNz_H5xAqx_6eqrwPY-1iLNgTt8OXUfJqrApSNCsBga92l4mNpyEyABMTHSvZITpLryfKDbpRVOjnYp6FyjQqBIy28suygpyNDObZHzHquOyellsdk-ZS23LFwJSMtspWT5XI_OU9NRnd3XsYGfx5dPFTG1vHQq5lkQoZw0"/>
+</div>
+<p class="font-body-md text-body-md text-on-tertiary-container dark:text-on-tertiary-container">
+                    © 2024 Legacy CPAs Tanzania. All rights reserved.
+                </p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col space-y-3">
+<a class="font-body-md text-body-md text-legacy-gold cursor-pointer transition-all hover:text-legacy-gold" href="/dar-es-salaam">Dar es Salaam Office</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-colors cursor-pointer" href="/arusha">Arusha Office</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-colors cursor-pointer" href="/tax-resources">Tax Resources</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col space-y-3">
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-colors cursor-pointer" href="/audit-guidelines">Audit Guidelines</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-colors cursor-pointer" href="/privacy-policy">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-colors cursor-pointer" href="/terms-of-service">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Minimal script for header shadow on scroll -->
+<script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+                header.classList.remove('border-b', 'border-surface-muted');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.add('border-b', 'border-surface-muted');
+            }
+        });
+    </script>
+</body></html>

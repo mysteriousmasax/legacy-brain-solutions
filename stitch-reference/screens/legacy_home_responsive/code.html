@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legacy - CPA Firm Tanzania</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#fbf9f8",
+                      "surface-muted": "#F6F5F5",
+                      "tertiary-fixed-dim": "#43d9ea",
+                      "on-tertiary-container": "#0097a5",
+                      "secondary-fixed-dim": "#e9c176",
+                      "heritage-navy": "#002147",
+                      "surface-container-high": "#eae8e7",
+                      "on-tertiary-fixed": "#001f23",
+                      "primary-fixed": "#d6e3ff",
+                      "secondary": "#775a19",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#465f88",
+                      "on-tertiary-fixed-variant": "#004f56",
+                      "outline": "#74777f",
+                      "tertiary-container": "#00262a",
+                      "surface": "#fbf9f8",
+                      "on-secondary-container": "#785a1a",
+                      "primary": "#000a1e",
+                      "professional-cyan": "#2ACADB",
+                      "secondary-fixed": "#ffdea5",
+                      "inverse-primary": "#aec7f6",
+                      "tertiary-fixed": "#8ff2ff",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f3f0f0",
+                      "background": "#fbf9f8",
+                      "on-secondary-fixed": "#261900",
+                      "primary-fixed-dim": "#aec7f6",
+                      "on-background": "#1b1c1c",
+                      "on-primary-fixed": "#001b3d",
+                      "surface-container": "#f0eded",
+                      "outline-variant": "#c4c6cf",
+                      "on-surface-variant": "#44474e",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "primary-container": "#002147",
+                      "surface-container-highest": "#e4e2e1",
+                      "tertiary": "#000d0f",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1b1c1c",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "charcoal-text": "#333333",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#fed488",
+                      "legacy-gold": "#C5A059",
+                      "inverse-surface": "#303030",
+                      "on-primary-container": "#708ab5",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e4e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary-fixed-variant": "#2d476f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "base": "8px",
+                      "margin-mobile": "20px",
+                      "gutter-desktop": "24px",
+                      "section-gap": "120px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "64px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        .text-shadow-md {
+            text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky bg-surface dark:bg-primary border-b border-heritage-navy/10 dark:border-outline-variant z-50">
+<nav class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<a class="font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-secondary-fixed" href="#"><img alt="Legacy Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb6DBawhIVscJ2sJZY5lsLwo6z0imspLz6aqyruDwdEoQCL_ORHvEmwdR7VIsHYQQoASxeR145bikhZaO3QCPzpxoV-LbCZvkyj5H1Bk8JC-611_nDGFZR585wPs2o8JXzuDPsCBblC9fTdsQ-2puBerZLPSX92NLhf60J4aY7V2thTbm-EVsxOHOSoPsUfKG89pxV0FGNH5A6YVomXjyzXvGxhxNfhP54EgJ8J1xsC-xVBS7ue8YvSPgOSpc3WQqOZ9c"/></a>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-8">
+<a class="font-body-md text-body-md text-professional-cyan font-bold border-b-2 border-professional-cyan pb-1 opacity-80 transition-all" href="#">Home</a>
+<a class="font-body-md text-body-md text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">About Us</a>
+<a class="font-body-md text-body-md text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">Services</a>
+<a class="font-body-md text-body-md text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">News</a>
+<a class="font-body-md text-body-md text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">Contact</a>
+</div>
+<button class="hidden md:inline-flex px-6 py-2 bg-professional-cyan text-on-primary font-label-md text-label-md rounded hover:bg-opacity-90 transition-opacity">
+                Get in Touch
+            </button>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-heritage-navy">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[819px] min-h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full" data-alt="A high-resolution, slightly desaturated wide shot of the modern Dar es Salaam skyline at dawn, showcasing contemporary corporate architecture. The lighting is soft and cinematic, emphasizing a professional, stable, and prestigious atmosphere appropriate for a top-tier CPA firm. The image adheres to the Heritage Modernism aesthetic with deep navy shadows and subtle golden hour highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuANxixl71HxGjn9-mDFiS-4mn3FLued1Dyhomp_XpzQIvgCGJ_mvcTCUyksXoD9rNxWCdFiI4AV_nm7z1C1rwS75jxmgjk-jNkPdA7ksAffZ2DqJZBZhawLpQf4gy4OGfAGIqWsyOtsCST7JaOgYLjoHeJdU6PShrvC_NyS2LoBf1DINxReuiiF1AWbIrqa6go8MfE7uxy6O9pHeltkAURNnntXr4sGSrkNFudnvIQherO-XmPAKmHSBw')"></div>
+<div class="absolute inset-0 bg-heritage-navy/60"></div>
+</div>
+<div class="relative z-10 max-w-[1280px] w-full mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-primary mb-6 max-w-4xl mx-auto text-shadow-md">
+                    Building Financial Legacies with Integrity
+                </h1>
+<p class="font-body-lg text-body-md md:text-body-lg text-surface-bright mb-10 max-w-2xl mx-auto opacity-90 text-shadow-sm">
+                    Tanzania’s premier partners for Audit, Tax, and Advisory services. Precision-engineered solutions for high-net-worth individuals and corporate entities.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-8 py-3 bg-professional-cyan text-on-primary font-label-md text-label-md rounded shadow-[0_4px_14px_0_rgba(42,202,219,0.39)] hover:bg-opacity-90 transition-all w-full sm:w-auto">
+                        Consult with Experts
+                    </button>
+<button class="px-8 py-3 border border-legacy-gold text-secondary-fixed bg-heritage-navy/20 backdrop-blur-sm font-label-md text-label-md rounded hover:bg-legacy-gold/10 transition-all w-full sm:w-auto">
+                        Explore Services
+                    </button>
+</div>
+</div>
+</section>
+<!-- Services Overview (Bento Grid Style) -->
+<section class="py-16 md:py-section-gap bg-surface">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-12 md:mb-16 text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-heritage-navy mb-4">Core Expertise</h2>
+<div class="h-px w-24 bg-legacy-gold/50 mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter-desktop">
+<!-- Large Card: Audit -->
+<div class="md:col-span-8 group border border-heritage-navy/10 bg-surface-muted p-6 md:p-8 rounded flex flex-col justify-between hover:shadow-[0_20px_40px_-15px_rgba(0,33,71,0.08)] transition-all duration-300 min-h-[250px] md:min-h-[300px] relative overflow-hidden">
+<div class="absolute -right-12 -top-12 text-heritage-navy/5">
+<span class="material-symbols-outlined text-[150px] md:text-[200px]" data-icon="shield">shield</span>
+</div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-legacy-gold text-4xl mb-4 md:mb-6" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<h3 class="font-headline-md text-headline-sm md:text-headline-md text-heritage-navy mb-4">Audit &amp; Assurance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                                Rigorous, independent financial verification ensuring absolute compliance and fostering stakeholder confidence in an evolving regulatory landscape.
+                            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-professional-cyan font-label-md mt-8 group-hover:gap-3 transition-all relative z-10" href="#">
+                            Learn more <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Small Card: Tax -->
+<div class="md:col-span-4 group border border-heritage-navy/10 bg-surface p-6 md:p-8 rounded flex flex-col justify-between hover:shadow-[0_20px_40px_-15px_rgba(0,33,71,0.08)] transition-all duration-300 min-h-[200px] md:min-h-[300px]">
+<div>
+<span class="material-symbols-outlined text-professional-cyan text-4xl mb-4 md:mb-6" data-icon="description" style="font-variation-settings: 'FILL' 1;">description</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-4">Tax Advisory</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Strategic tax planning and compliance tailored to Tanzanian legislation, optimizing structures for growth.
+                            </p>
+</div>
+</div>
+<!-- Small Card: Consulting -->
+<div class="md:col-span-4 group border border-heritage-navy/10 bg-surface p-6 md:p-8 rounded flex flex-col justify-between hover:shadow-[0_20px_40px_-15px_rgba(0,33,71,0.08)] transition-all duration-300 min-h-[200px] md:min-h-[300px]">
+<div>
+<span class="material-symbols-outlined text-professional-cyan text-4xl mb-4 md:mb-6" data-icon="trending_up" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-4">Financial Consulting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Deep analytical insights and valuation services to guide mergers, acquisitions, and strategic restructuring.
+                            </p>
+</div>
+</div>
+<!-- Medium Card: Risk -->
+<div class="md:col-span-8 group border border-heritage-navy/10 bg-surface-muted p-6 md:p-8 rounded flex flex-col justify-between hover:shadow-[0_20px_40px_-15px_rgba(0,33,71,0.08)] transition-all duration-300 min-h-[250px] md:min-h-[300px]">
+<div>
+<span class="material-symbols-outlined text-legacy-gold text-4xl mb-4 md:mb-6" data-icon="balance" style="font-variation-settings: 'FILL' 1;">balance</span>
+<h3 class="font-headline-md text-headline-sm md:text-headline-md text-heritage-navy mb-4">Risk Management</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">
+                                Proactive identification and mitigation of enterprise risks, establishing robust internal controls to safeguard your financial legacy against market volatility.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 md:py-section-gap bg-surface-muted dark:bg-surface-container-highest border-t border-legacy-gold/30">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter-desktop">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-secondary-fixed mb-4"><img alt="Legacy Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjaqLCYFrewyzYXgod5m8f2uf2ZC-pvb759bpsNASluPX8XcteBnGDx5EAG1NabSF5ZBGJXVaJvrv6FKO17CZ4Kn7iTOv642djb_R8opg2062cYhF1mq0bAqyxhCIYag9kA0I8K_xswT7C0KSeFmQiVoDBM2JlXnI05cjN97hJE-5-d1gnjIaSTWjdTpOCg7JJaTj5C_S7lQYK0JgDQpqXTciYlGIlcGVpF36zFMz9hdvcmK_-KrlJ0xNHDLP7_jbUylk"/></div>
+<p class="font-body-md text-body-md text-charcoal-text dark:text-on-surface-variant max-w-sm mb-8">
+                    Tanzania’s premier partners for Audit, Tax, and Advisory services. Registered with NBAA.
+                </p>
+<div class="font-body-sm text-body-sm text-charcoal-text dark:text-on-surface-variant">
+                    © 2024 Legacy CPA Tanzania. All rights reserved. Registered with NBAA.
+                </div>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-heritage-navy uppercase tracking-wider mb-2">Offices</span>
+<a class="font-body-md text-body-md text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200" href="#">Dar es Salaam Office</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-heritage-navy uppercase tracking-wider mb-2">Legal &amp; Links</span>
+<a class="font-body-md text-body-md text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200" href="#">NBAA Portal</a>
+<a class="font-body-md text-body-md text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

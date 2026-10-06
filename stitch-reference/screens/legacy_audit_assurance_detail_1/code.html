@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit &amp; Assurance - Legacy CPAs Tanzania</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-secondary-container": "#785a1a",
+                        "charcoal-text": "#333333",
+                        "on-secondary-fixed": "#261900",
+                        "surface": "#fbf9f8",
+                        "on-error": "#ffffff",
+                        "primary-container": "#002147",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#44474e",
+                        "secondary-fixed": "#ffdea5",
+                        "surface-muted": "#F6F5F5",
+                        "heritage-navy": "#002147",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-low": "#f6f3f2",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-container": "#fed488",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fbf9f8",
+                        "tertiary-container": "#00262a",
+                        "outline-variant": "#c4c6cf",
+                        "surface-variant": "#e4e2e1",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#8ff2ff",
+                        "on-tertiary-container": "#0097a5",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "on-primary-fixed": "#001b3d",
+                        "background": "#fbf9f8",
+                        "primary-fixed-dim": "#aec7f6",
+                        "outline": "#74777f",
+                        "on-primary-container": "#708ab5",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-tertiary-fixed": "#001f23",
+                        "professional-cyan": "#2ACADB",
+                        "inverse-surface": "#303030",
+                        "surface-container-high": "#eae8e7",
+                        "surface-tint": "#465f88",
+                        "primary": "#000a1e",
+                        "secondary": "#775a19",
+                        "inverse-primary": "#aec7f6",
+                        "legacy-gold": "#C5A059",
+                        "tertiary-fixed-dim": "#43d9ea",
+                        "tertiary": "#000d0f",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-background": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary-fixed-variant": "#004f56",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-desktop": "24px",
+                        "margin-desktop": "80px",
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Playfair Display"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 33, 71, 0.08);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 20px 40px -10px rgba(0, 33, 71, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-legacy-gold selection:text-heritage-navy">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-primary-container border-b border-legacy-gold/10">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex items-center gap-4 cursor-pointer active:opacity-80">
+<img alt="Legacy CPAs Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA26feXC1aikyNkST80l7dnX1t14IjB9Lj9LhkqJx6eoi5403xTebTxN07bhpDOs4h8yfN2xVxVHtpkO49fnBX1WwVAEJ5TEdKheoZXBF5y11Fp076k_7pNrPiULGH8pX6u8CYp2-JgH8KiHs_JTNxztmkCsvMWkMycXwMzJ4sWEaVACCWxBXBuyLpV96jOodHoPDuvb1nkcK2er58lc10cuquXo9Gv9goXZ987NOHDLRc04KChZ8v3-8ntm5XVxtOtj6o"/>
+<span class="font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-primary-fixed">Legacy</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300" href="#">About Us</a>
+<!-- Services is active -->
+<div class="relative group">
+<a class="font-body-md text-body-md text-legacy-gold font-bold border-b-2 border-legacy-gold pb-1 transition-all duration-200" href="#">Services</a>
+</div>
+<a class="font-body-md text-body-md text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300" href="#">News</a>
+<a class="font-body-md text-body-md text-on-surface dark:text-on-primary-fixed-variant hover:text-legacy-gold transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="hidden md:inline-flex px-6 py-2.5 bg-professional-cyan text-on-tertiary font-label-md text-label-md rounded hover:bg-opacity-90 transition-all duration-300">
+                Client Portal
+            </button>
+<button class="md:hidden text-heritage-navy">
+<span class="material-symbols-outlined text-[32px]">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-heritage-navy">
+<div class="absolute inset-0 z-0" data-alt="A sophisticated, low-contrast architectural photograph of a modern corporate skyscraper in Dar es Salaam. The image is taken from a low angle, emphasizing stability and scale. The overall tone is heavily tinted with a deep Heritage Navy overlay, creating a calm, authoritative atmosphere suitable for a financial services website. The lighting is soft and diffused, highlighting the geometric lines of the building without harsh shadows. The aesthetic is corporate modernism, embodying trust, precision, and legacy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWu7C7opgLsLKNYQ-RTPqYJXynv5pe4rrY0TzaKofjwUDSe4zb_IFOh2o2Hb43EZkdCeOmuMlf0NdEA1xlKq5JI2WHRFIkR_zzsPLOvrAXf08I_YbKkLaN8qbwFQuCaP2aa06YUoG7d-EF5L-15mUUTyPJ4PZwFsUW96uoqDfT7aPav7hRC1iExqwVCRJSwifPora-jZbs_ImbHwP9PEto1og5wUJKH_ed2ibOTcWpt0ou4iG32fF0sg')"></div>
+<div class="absolute inset-0 bg-heritage-navy/80 mix-blend-multiply z-10"></div>
+<div class="relative z-20 container mx-auto px-margin-mobile md:px-margin-desktop max-w-5xl text-center">
+<div class="inline-flex items-center gap-2 mb-6 text-legacy-gold font-label-md text-label-md uppercase tracking-widest">
+<span class="w-8 h-[1px] bg-legacy-gold"></span>
+<span>Service Deep Dive</span>
+<span class="w-8 h-[1px] bg-legacy-gold"></span>
+</div>
+<h1 class="font-display-lg text-[40px] md:text-display-lg text-white mb-6">
+                    Audit &amp; Assurance
+                </h1>
+<p class="font-body-lg text-body-lg text-surface-muted max-w-3xl mx-auto mb-10 text-opacity-90 leading-relaxed">
+                    Rigorous, independent verification delivering uncompromising clarity. We provide the confidence needed to navigate complex financial landscapes in Tanzania and beyond.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-8 py-4 bg-professional-cyan text-white font-label-md text-label-md rounded hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-2">
+                        Request a Consultation
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="px-8 py-4 bg-transparent border border-legacy-gold text-legacy-gold font-label-md text-label-md rounded hover:bg-legacy-gold hover:text-heritage-navy transition-all duration-300">
+                        View Methodology
+                    </button>
+</div>
+</div>
+</section>
+<!-- Core Solutions Section (Bento Grid) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto bg-surface">
+<div class="max-w-3xl mb-16">
+<h2 class="font-headline-lg text-[32px] md:text-headline-lg text-heritage-navy mb-4">Core Assurance Solutions</h2>
+<div class="w-16 h-[2px] bg-legacy-gold mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Tailored auditing services designed to uncover value, mitigate risk, and ensure total compliance across diverse regulatory environments.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop">
+<!-- Card 1 (Large) -->
+<div class="md:col-span-8 bg-surface-muted rounded-lg p-8 border border-heritage-navy/10 relative overflow-hidden group hover:border-legacy-gold/30 transition-colors duration-500">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-heritage-navy/5 to-transparent rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
+<div class="mb-6 h-12 w-12 rounded flex items-center justify-center bg-heritage-navy text-legacy-gold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-4 group-hover:text-legacy-gold transition-colors">Statutory Audits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Absolute compliance with NBAA and IFRS standards. Our statutory audits provide stakeholders with the highest level of assurance regarding the fairness and accuracy of financial statements, fostering trust and transparency.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant/80">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-professional-cyan text-[20px]">check</span> Annual Financial Statement Audits</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-professional-cyan text-[20px]">check</span> Regulatory Compliance Reviews</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-professional-cyan text-[20px]">check</span> IFRS Conversion &amp; Implementation</li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="md:col-span-4 bg-surface border border-heritage-navy/10 rounded-lg p-8 ambient-shadow-hover transition-all duration-500 group">
+<div class="mb-6 h-10 w-10 text-professional-cyan">
+<span class="material-symbols-outlined text-[40px]" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-3">Internal Audits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Strategic evaluation of controls and risk management. We go beyond the numbers to optimize operational efficiency and safeguard assets.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-12 lg:col-span-6 bg-heritage-navy text-white rounded-lg p-8 relative overflow-hidden group border border-legacy-gold/20">
+<div class="absolute bottom-0 right-0 opacity-10 transform translate-x-1/4 translate-y-1/4 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">find_in_page</span>
+</div>
+<div class="relative z-10">
+<div class="mb-6 h-10 w-10 text-legacy-gold">
+<span class="material-symbols-outlined text-[40px]">troubleshoot</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-white mb-3">Special Purpose Audits</h3>
+<p class="font-body-md text-body-md text-surface-muted/80 mb-6 max-w-md">
+                            Bespoke investigations for specific transactions, grant audits, or fraud examinations requiring forensic precision.
+                        </p>
+<a class="inline-flex items-center gap-2 text-legacy-gold font-label-md hover:text-white transition-colors" href="#">
+                            Explore Special Audits <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full h-px bg-legacy-gold/30 max-w-7xl mx-auto"></div>
+<!-- Methodology Section (Process Flow) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto bg-surface-bright">
+<div class="text-center mb-16 max-w-3xl mx-auto">
+<span class="text-legacy-gold font-label-sm uppercase tracking-widest mb-2 block">Our Process</span>
+<h2 class="font-headline-lg text-[32px] md:text-headline-lg text-heritage-navy mb-4">The Legacy Methodology</h2>
+<div class="w-16 h-[2px] bg-heritage-navy mx-auto mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A mathematically precise, phased approach ensuring thoroughness and strategic insight at every stage of the audit lifecycle.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop relative">
+<!-- Connecting Line (Desktop only) -->
+<div class="hidden md:block absolute top-[40px] left-[16%] right-[16%] h-[1px] bg-legacy-gold/30 border-dashed border-t"></div>
+<!-- Phase 1 -->
+<div class="relative flex flex-col items-center text-center group pt-4">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-legacy-gold flex items-center justify-center text-legacy-gold font-headline-sm mb-6 relative z-10 group-hover:bg-legacy-gold group-hover:text-white transition-colors duration-300">
+                        1
+                    </div>
+<h3 class="font-headline-sm text-[20px] text-heritage-navy mb-3">Strategic Planning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deep dive into the business model, regulatory environment, and industry-specific risks to tailor our audit approach.</p>
+</div>
+<!-- Phase 2 -->
+<div class="relative flex flex-col items-center text-center group pt-4">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-legacy-gold flex items-center justify-center text-legacy-gold font-headline-sm mb-6 relative z-10 group-hover:bg-legacy-gold group-hover:text-white transition-colors duration-300">
+                        2
+                    </div>
+<h3 class="font-headline-sm text-[20px] text-heritage-navy mb-3">Precision Execution</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deployment of advanced analytical tools and rigorous substantive testing to verify data integrity and internal controls.</p>
+</div>
+<!-- Phase 3 -->
+<div class="relative flex flex-col items-center text-center group pt-4">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-legacy-gold flex items-center justify-center text-legacy-gold font-headline-sm mb-6 relative z-10 group-hover:bg-legacy-gold group-hover:text-white transition-colors duration-300">
+                        3
+                    </div>
+<h3 class="font-headline-sm text-[20px] text-heritage-navy mb-3">Comprehensive Reporting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Delivery of a detailed management letter outlining strategic recommendations alongside the final independent audit opinion.</p>
+</div>
+</div>
+</section>
+<!-- Why Legacy Section (Asymmetric Layout) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="absolute inset-0 bg-heritage-navy/5 transform translate-x-4 translate-y-4 rounded-lg"></div>
+<img class="w-full h-auto object-cover rounded-lg relative z-10 grayscale-[20%]" data-alt="A candid, high-resolution environmental portrait of two professional auditors reviewing complex financial data on a modern tablet in a brightly lit, contemporary office setting in Dar es Salaam. The mood is focused and collaborative. The aesthetic is clean and minimalist, utilizing the brand's 'Corporate Modernism' style with subtle navy accents in their attire against a predominantly white and light gray background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI4pClXqScPMZmRbp-HoQV4pYjNb0imDT5KLoRZOSOjDEAy4r-ROe4LwHOT8ubJM0IJI083kZra1xNFO8cMIpbRITnX9TB__mnN3vENFUIkzSDCScJuC-5YN7ImEMvMqj917Zrd58IG21ohPvAqaYaBAv12ULjKxkVNJVsxIXwJFgolvZK1RgdGUW4VqO4pllja5gJzDeDEwaFgafOAcMeyOVipQPjnPjq-PELMdG6-ib-SqgiyMsNRg"/>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline-lg text-[32px] md:text-headline-lg text-heritage-navy mb-6">Heritage Stability.<br/><span class="text-legacy-gold">Modern Efficiency.</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        At Legacy CPAs, we blend decades of institutional knowledge with cutting-edge audit technology. Our commitment is not just to compliance, but to providing insights that drive your business forward.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4 p-4 border border-surface-variant rounded bg-surface-muted">
+<span class="material-symbols-outlined text-professional-cyan mt-1">verified</span>
+<div>
+<h4 class="font-headline-sm text-[18px] text-heritage-navy">NBAA Registered</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant">Fully accredited and recognized by the National Board of Accountants and Auditors Tanzania.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 border border-surface-variant rounded bg-surface-muted">
+<span class="material-symbols-outlined text-professional-cyan mt-1">globe</span>
+<div>
+<h4 class="font-headline-sm text-[18px] text-heritage-navy">IFRS Compliant</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant">Expertise in International Financial Reporting Standards for seamless global operations.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-section-gap border-t border-legacy-gold/30 bg-tertiary-container dark:bg-tertiary-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<img alt="Legacy Logo" class="h-10 w-10 object-contain filter brightness-0 invert opacity-80 sepia hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIv7FBk8YyRZnjRulrcMl6ceFw7fyoDf-I_7mPObf2ma-kR6lF-3hrWHMLaaSQgsXUpM8NRhP7uzxPIuOUf4sbs_fxC0EsBVR_oaY5u519kUBPAknDKFolh1UoVbuxUFtI1VLQU3GSYs566J-DPbNnGsmamTj1_Uz67I-b-2ndr0cdQXAXP_ZT9B8DAh0bDMCkKfu19so4zTBCYi000VKn_Kw-HvbEVF0xDsToFQ-kTH0PErwdnViJETM3In83oBQ6mHE"/>
+<span class="font-headline-sm text-headline-sm text-legacy-gold">Legacy</span>
+</div>
+<p class="font-body-md text-body-md text-on-tertiary-container/80 max-w-xs">
+                    Heritage Modernism in financial services. Delivering uncompromising clarity and precision.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-tertiary-container uppercase tracking-widest mb-2">Offices</h4>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-all cursor-pointer w-fit" href="#">Dar es Salaam Office</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-all cursor-pointer w-fit" href="#">Arusha Office</a>
+</div>
+<!-- Resources Column -->
+<div class="flex flex-col gap-4">
+<h4 class="font-label-md text-label-md text-on-tertiary-container uppercase tracking-widest mb-2">Resources</h4>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-all cursor-pointer w-fit" href="#">Tax Resources</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-all cursor-pointer w-fit" href="#">Audit Guidelines</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-all cursor-pointer w-fit" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-container/80 hover:text-legacy-gold transition-all cursor-pointer w-fit" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-legacy-gold/10 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<p class="font-body-md text-[14px] text-on-tertiary-container/60 text-center md:text-left">
+                © 2024 Legacy CPAs Tanzania. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

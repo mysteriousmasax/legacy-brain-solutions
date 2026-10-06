@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Legacy Brain Solutions Limited: company registration, institutions, compliance, accountancy, legal issues, and tax consultation services.">
+  <title>Legacy Brain Solutions Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./card-effects.css">
+  <link rel="stylesheet" href="./role-overrides.css">
+  <link rel="stylesheet" href="./orders-overrides.css">
+  <link rel="stylesheet" href="./orders-mobile.css">
+  <link rel="stylesheet" href="./staff-overrides.css">
+  <link rel="stylesheet" href="./settings-overrides.css">
+  <link rel="stylesheet" href="./audit-overrides.css">
+  <link rel="stylesheet" href="./portal-overrides.css">
+  <link rel="stylesheet" href="./contact-overrides.css">
+  <link rel="stylesheet" href="./office-overrides.css">
+  <link rel="stylesheet" href="./responsive-overrides.css">
+  <link rel="stylesheet" href="./nav-fix.css">
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./src/main.jsx"></script>
+  <script>
+    // Local file previews cannot execute JSX modules; use the browser-safe fallback there.
+    window.setTimeout(function () {
+      if (location.protocol === 'file:' && !document.getElementById('app').hasChildNodes()) {
+        var fallback = document.createElement('script')
+        fallback.src = './app.js'
+        document.body.appendChild(fallback)
+      }
+    }, 80)
+  </script>
+  <script>
+    (function () {
+      var logo = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlWWwgxq1rYL_Y-0uBACqFUpcQcXc5mW5XUepEaBvDLiTK8oVVLqsvm-ewWFesG5LsLg3DRzG11bjghTRu0FgWXHEMmUZxvHtoVqkKddfukU5Vl0DF9MvI7Lh-EAJNNzqd0Oona_APn0BgGx5y9GMWP6EDSW94B17kHjLvxxGa0GmLe4Di02hlE7WtvD4I_fTePS_0PcKC_m6LJWm-13MYhyTvIPnLNjNaYrNMMwMQ5mahVrhyJWNErydfyVfekydM5Mo';
+      function normalize() {
+        var legacyHeader = document.querySelector('.contact-header');
+        if (!legacyHeader || legacyHeader.dataset.normalized) return;
+        legacyHeader.className = 'public-header';
+        legacyHeader.innerHTML = '<div class="container public-nav"><a class="brand" href="#home"><img class="brand-logo" src="' + logo + '" alt="Legacy Brain Solutions Limited"></a><nav class="nav-links"><a href="#home">Home</a><a href="#about">About Us</a><a href="#services">Services</a><a href="#news">News</a><a class="active" href="#contact">Contact</a><span class="nav-divider"></span><a href="#portal-dashboard">Client Portal</a><a href="#admin-dashboard">Admin Portal</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a></nav><div class="header-actions"><a class="header-access" href="#portal-dashboard">Client Portal</a><a class="header-access" href="#admin-dashboard">Admin Portal</a><a class="btn btn-primary" href="#proposal">Get in touch</a></div><button class="mobile-toggle" aria-label="Open navigation">☰</button></div>';
+        legacyHeader.dataset.normalized = 'true';
+        if (legacyHeader.getBoundingClientRect().width < 900) legacyHeader.classList.add('compact-header');
+        var toggle = legacyHeader.querySelector('.mobile-toggle');
+        var nav = legacyHeader.querySelector('.nav-links');
+        toggle.addEventListener('click', function () { nav.classList.toggle('open'); toggle.textContent = nav.classList.contains('open') ? '×' : '☰'; });
+      }
+      window.setTimeout(normalize, 700);
+      window.addEventListener('hashchange', function () { window.setTimeout(normalize, 120); });
+    }());
+  </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Department Permissions - Heritage Modernism Portal</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e9c176",
+                        "on-surface": "#1b1c1c",
+                        "outline-variant": "#c4c6cf",
+                        "on-secondary-container": "#785a1a",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "heritage-navy": "#002147",
+                        "tertiary-fixed": "#8ff2ff",
+                        "secondary-fixed": "#ffdea5",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#002147",
+                        "error-container": "#ffdad6",
+                        "surface-muted": "#F6F5F5",
+                        "legacy-gold": "#C5A059",
+                        "on-tertiary-fixed": "#001f23",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f8",
+                        "tertiary-container": "#00262a",
+                        "surface": "#fbf9f8",
+                        "on-secondary": "#ffffff",
+                        "primary": "#000a1e",
+                        "surface-variant": "#e4e2e1",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004f56",
+                        "background": "#fbf9f8",
+                        "primary-fixed-dim": "#aec7f6",
+                        "on-background": "#1b1c1c",
+                        "on-primary-container": "#708ab5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#261900",
+                        "on-surface-variant": "#44474e",
+                        "secondary-container": "#fed488",
+                        "tertiary-fixed-dim": "#43d9ea",
+                        "outline": "#74777f",
+                        "surface-dim": "#dcd9d9",
+                        "charcoal-text": "#333333",
+                        "primary-fixed": "#d6e3ff",
+                        "secondary": "#775a19",
+                        "professional-cyan": "#2ACADB",
+                        "inverse-primary": "#aec7f6",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-container-highest": "#e4e2e1",
+                        "surface-tint": "#465f88",
+                        "tertiary": "#000d0f",
+                        "inverse-surface": "#303030",
+                        "on-tertiary-container": "#0097a5",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-primary-fixed-variant": "#2d476f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter-desktop": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "base": "8px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    },
+                    "boxShadow": {
+                        'ambient': '0 20px 40px -10px rgba(0, 33, 71, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf9f8; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c4c6cf; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #74777f; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen">
+<!-- Side Navigation Shell -->
+<nav class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 border-r border-outline-variant opacity-100 bg-surface z-40 py-8 px-4">
+<!-- Brand Area -->
+<div class="mb-12 px-2 flex items-center gap-3">
+<img alt="Heritage CPA Logo" class="h-10 w-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFc40I9PsmESc7SFzpXrrnwhk71SUF_QyrF0YCWhC62UZLWMvL2qiJ0n6LkNlITmWvoeRT8sius0MMJKiUXJe2_WgPqGRR_9YwdBX1xhDljRWsT0wZyg6nSwc2GbDVuYsJDTm5ebIxNWs3uPc_KUogtkYUsKN7TXegzXwc2CVFOTLw1IymhYacBfW-4ROxiHuMmjaoM89VCmuYf08KsAJIk3xFvj6JzvzO83FvtBkEGue63NfibbKAm5X9dN9G-pINQ-A"/>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-heritage-navy">Heritage CPA</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Premier Accounting</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                    Orders
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+                    Clients
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+                    Staff
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md text-on-secondary-container bg-secondary-container font-bold transition-transform hover:scale-[0.98]" href="#">
+<span class="material-symbols-outlined fill" data-icon="settings">settings</span>
+                    System Settings
+                </a>
+</li>
+</ul>
+<!-- CTA -->
+<div class="mt-auto px-2">
+<button class="w-full py-3 bg-heritage-navy text-on-primary font-label-md text-label-md rounded border border-legacy-gold/30 hover:bg-primary transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+                Generate Report
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-64 flex flex-col h-screen overflow-hidden">
+<!-- Top App Bar Shell -->
+<header class="fixed top-0 right-0 left-0 md:left-64 h-16 bg-surface border-b border-outline-variant opacity-100 z-30 flex items-center justify-between px-gutter-desktop w-full transition-all">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="md:hidden text-heritage-navy p-2 hover:bg-surface-muted rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h2 class="font-headline-sm text-headline-sm font-bold text-heritage-navy hidden md:block">Heritage Modernism Portal</h2>
+</div>
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="hidden sm:flex items-center bg-surface-muted border border-outline-variant/30 rounded px-3 py-1.5 focus-within:ring-1 focus-within:ring-legacy-gold focus-within:border-legacy-gold transition-all">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search" style="font-size: 20px;">search</span>
+<input class="bg-transparent border-none outline-none text-body-md font-body-md placeholder:text-on-surface-variant/70 w-48 focus:ring-0 p-0" placeholder="Search..." type="text"/>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-muted rounded-full transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-legacy-gold rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-muted rounded-full transition-colors hidden sm:block">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<!-- Profile -->
+<div class="h-8 w-8 rounded-full bg-surface-container-high border border-outline-variant/50 overflow-hidden cursor-pointer hover:ring-2 ring-legacy-gold transition-all ml-2">
+<img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="A professional headshot of an executive accountant in a well-lit modern office setting. She is wearing a dark navy blazer, smiling subtly, with out-of-focus glass walls and a hint of warm sunlight in the background. High resolution, corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJyv7VERZ26rgD2KDqkPr5vTGbayoRq5yC9o6Rs_sA8qAcD0OfexOf8e4V2Bvhfwa6kAknmJnf05s3dzcZCxEJHMJezwS9zfF0W4JHb1S8FvvwLkCi2ZncIDOOg5a0P6I_h4T3kuYRHI003c-LtRSGOvjLWdkJz-LVeQr5GgJ_bXMgkz2YGZSjmBecEN79fvDxF3mnqicXSBgR84LG11jQ5kznIxj5laH31trAklhsFJRsnvn5kjmqBQ"/>
+</div>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<main class="flex-1 overflow-y-auto mt-16 pt-8 pb-32 px-gutter-desktop lg:px-margin-desktop bg-background">
+<div class="max-w-6xl mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-10">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-heritage-navy mb-2">Department Permissions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Configure and manage system access levels, visibility, and capabilities across operational divisions.</p>
+</div>
+<!-- Tab Navigation (Sub-navigation) -->
+<div class="border-b border-legacy-gold/30 mb-8 overflow-x-auto">
+<nav aria-label="Tabs" class="flex gap-8 min-w-max">
+<a class="border-transparent text-on-surface-variant hover:text-heritage-navy hover:border-outline-variant whitespace-nowrap py-4 px-1 border-b-2 font-label-md text-label-md transition-colors" href="#">
+                            Directory
+                        </a>
+<a class="border-transparent text-on-surface-variant hover:text-heritage-navy hover:border-outline-variant whitespace-nowrap py-4 px-1 border-b-2 font-label-md text-label-md transition-colors" href="#">
+                            Access Roles
+                        </a>
+<a aria-current="page" class="border-professional-cyan text-heritage-navy whitespace-nowrap py-4 px-1 border-b-2 font-label-md text-label-md font-bold" href="#">
+                            Department Permissions
+                        </a>
+</nav>
+</div>
+<!-- Grid Layout for Departments -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Department Card: Audit & Assurance -->
+<div class="bg-surface border border-surface-muted rounded-lg p-6 hover:shadow-ambient transition-shadow duration-300 relative overflow-hidden group">
+<!-- Decorative top accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-heritage-navy to-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-legacy-gold" data-icon="account_balance" style="font-size: 24px;">account_balance</span>
+                                    Audit &amp; Assurance
+                                </h3>
+<div class="flex items-center gap-3">
+<img alt="Sarah Jenkins" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover" data-alt="A small, circular headshot of a professional male auditor in his 40s. He wears a crisp white shirt and a tie, looking directly at the camera with a confident, analytical expression. The background is a muted, neutral grey to emphasize the subject. High quality corporate portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBH8pKalNhxc7pW6TSDZvsVJt94TbjUQZorSd1LX0Ba1CCSysyvFF805h-MvMRnGYFPSzCdW6kxOVA8_rSTloThQaIT-H9SvUJzGWPxmHXdYj4vXluBZnjLdZ8Vc3JzhHXDxzS2s7DATUHpSvccG5LpICT3xYYFzkrtU16o6DkZUcmyL3FkB2bMzuVQnwhrpysJjFWHXRNHGvQN0oP1A7PxX2UR0BtOkS5S5LBTCQMGP0qe1PoM7D7rhg"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Head: <span class="font-medium text-heritage-navy">Sarah Jenkins, Partner</span></p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Access Level Dropdown -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Base Access Level</label>
+<div class="relative">
+<select class="block w-full bg-surface-muted border border-outline-variant/30 text-heritage-navy py-2 px-3 pr-8 rounded font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-legacy-gold focus:border-legacy-gold appearance-none transition-all">
+<option value="full">Full Access</option>
+<option selected="" value="standard">Standard Access</option>
+<option value="restricted">Restricted</option>
+<option value="none">No Access</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="expand_more" style="font-size: 20px;">expand_more</span>
+</div>
+</div>
+</div>
+<hr class="border-t border-legacy-gold/20"/>
+<!-- Granular Permissions -->
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant mb-3">Active Capabilities</h4>
+<div class="flex flex-wrap gap-2">
+<!-- Tag/Checkbox style -->
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all">
+<span class="material-symbols-outlined text-[16px] peer-checked:text-heritage-navy text-outline-variant" data-icon="check_circle">check_circle</span>
+                                            Client Data
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all">
+<span class="material-symbols-outlined text-[16px] peer-checked:text-heritage-navy text-outline-variant" data-icon="check_circle">check_circle</span>
+                                            Working Papers
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all hover:bg-surface-muted">
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                            Tax Filings
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all hover:bg-surface-muted">
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                            Billing
+                                        </span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Department Card: Tax Services -->
+<div class="bg-surface border border-surface-muted rounded-lg p-6 hover:shadow-ambient transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-heritage-navy to-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-legacy-gold" data-icon="request_quote" style="font-size: 24px;">request_quote</span>
+                                    Tax Services
+                                </h3>
+<div class="flex items-center gap-3">
+<img alt="Michael Chang" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover" data-alt="A small, circular headshot of a female tax director in her 50s. She is wearing round glasses and a tailored grey suit. The lighting is bright and professional, projecting authority and meticulousness. The background features subtle architectural lines of a modern office." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa1rGM3AzcnGTmaEtEolBkWUIU_EXkM0lpi_g0Yg1QRIv2nZV6nuad-LT7XEmfqTqR1ug_hj_9NhEbgN6xTcm6jyYIQe6r-sUEcc_af6EC3wd8RmWs9ZXsfwFJZx6QuamjSh9b1jI64EOleyx_WwEWnXmJLhUl0U_5KpE96XOQC5fI27keeC9-TFS1t3Y6yKTI0xhZ5Ozd-hTOHseQ2_FEq_16uBWpve_ORB8hC_RINF7olPWTejSM9A"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Head: <span class="font-medium text-heritage-navy">Michael Chang, Director</span></p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Base Access Level</label>
+<div class="relative">
+<select class="block w-full bg-surface-muted border border-outline-variant/30 text-heritage-navy py-2 px-3 pr-8 rounded font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-legacy-gold focus:border-legacy-gold appearance-none transition-all">
+<option selected="" value="full">Full Access</option>
+<option value="standard">Standard Access</option>
+<option value="restricted">Restricted</option>
+<option value="none">No Access</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="expand_more" style="font-size: 20px;">expand_more</span>
+</div>
+</div>
+</div>
+<hr class="border-t border-legacy-gold/20"/>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant mb-3">Active Capabilities</h4>
+<div class="flex flex-wrap gap-2">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all">
+<span class="material-symbols-outlined text-[16px] peer-checked:text-heritage-navy text-outline-variant" data-icon="check_circle">check_circle</span>
+                                            Client Data
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all hover:bg-surface-muted">
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                            Working Papers
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all">
+<span class="material-symbols-outlined text-[16px] peer-checked:text-heritage-navy text-outline-variant" data-icon="check_circle">check_circle</span>
+                                            Tax Filings
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all">
+<span class="material-symbols-outlined text-[16px] peer-checked:text-heritage-navy text-outline-variant" data-icon="check_circle">check_circle</span>
+                                            Billing
+                                        </span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Department Card: Administrative -->
+<div class="bg-surface border border-surface-muted rounded-lg p-6 hover:shadow-ambient transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-heritage-navy to-legacy-gold opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-legacy-gold" data-icon="corporate_fare" style="font-size: 24px;">corporate_fare</span>
+                                    Administrative
+                                </h3>
+<div class="flex items-center gap-3">
+<img alt="Elena Rostova" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover" data-alt="A small, circular headshot of an administrative professional in her 30s. She is smiling warmly, wearing a smart casual blouse. The image is bright and welcoming, conveying efficiency and support. The background is a softly blurred office environment with white and beige tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-rhXdI_R0BKFODBcTimZCgXa4_OHpjt0rWYQlMFtNJdzLiXtowdB8CqmVxnNwzzvnzN2c26Nhh-OwZjuWAw3pXAET1lmYD2XnMxTGpDNklDqDeFC_D0P8VyfCvdbbMtBCFtwTzbkHf2dX8B4ZaUgWFCDdw3_9L5qdg9tL8O-fssxfKau7BXNhvrDhu4f0jWyqF-DETWvLMf2TZ1nxhcvsCOp3pyjmtYrx1y6XrfMpYqPI4-BXW2WEmQ"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Head: <span class="font-medium text-heritage-navy">Elena Rostova, Ops Manager</span></p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-2">Base Access Level</label>
+<div class="relative">
+<select class="block w-full bg-surface-muted border border-outline-variant/30 text-heritage-navy py-2 px-3 pr-8 rounded font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-legacy-gold focus:border-legacy-gold appearance-none transition-all">
+<option value="full">Full Access</option>
+<option value="standard">Standard Access</option>
+<option selected="" value="restricted">Restricted</option>
+<option value="none">No Access</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="expand_more" style="font-size: 20px;">expand_more</span>
+</div>
+</div>
+</div>
+<hr class="border-t border-legacy-gold/20"/>
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant mb-3">Active Capabilities</h4>
+<div class="flex flex-wrap gap-2">
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all hover:bg-surface-muted">
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                            Client Data
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all hover:bg-surface-muted">
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                            Working Papers
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all hover:bg-surface-muted">
+<span class="material-symbols-outlined text-[16px] text-outline-variant" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+                                            Tax Filings
+                                        </span>
+</label>
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded border border-outline-variant/50 font-label-sm text-label-sm text-on-surface-variant peer-checked:border-heritage-navy peer-checked:bg-heritage-navy/5 peer-checked:text-heritage-navy transition-all">
+<span class="material-symbols-outlined text-[16px] peer-checked:text-heritage-navy text-outline-variant" data-icon="check_circle">check_circle</span>
+                                            Billing
+                                        </span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Fixed Footer Action Bar -->
+<div class="fixed bottom-0 right-0 left-0 md:left-64 bg-surface/90 backdrop-blur-md border-t border-outline-variant/30 p-4 px-gutter-desktop lg:px-margin-desktop z-30">
+<div class="max-w-6xl mx-auto flex justify-end gap-4 items-center w-full">
+<button class="px-6 py-2 border border-outline-variant text-heritage-navy rounded font-label-md text-label-md hover:bg-surface-muted transition-colors">
+                    Discard Changes
+                </button>
+<button class="px-6 py-2 bg-professional-cyan text-on-primary rounded font-label-md text-label-md hover:bg-tertiary-container transition-colors shadow-sm">
+                    Save Permissions
+                </button>
+</div>
+</div>
+</div>
+</body></html>

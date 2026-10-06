@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services - Legacy CPA Tanzania</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidelines -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#fbf9f8",
+                      "surface-muted": "#F6F5F5",
+                      "tertiary-fixed-dim": "#43d9ea",
+                      "on-tertiary-container": "#0097a5",
+                      "secondary-fixed-dim": "#e9c176",
+                      "heritage-navy": "#002147",
+                      "surface-container-high": "#eae8e7",
+                      "on-tertiary-fixed": "#001f23",
+                      "primary-fixed": "#d6e3ff",
+                      "secondary": "#775a19",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary": "#ffffff",
+                      "surface-tint": "#465f88",
+                      "on-tertiary-fixed-variant": "#004f56",
+                      "outline": "#74777f",
+                      "tertiary-container": "#00262a",
+                      "surface": "#fbf9f8",
+                      "on-secondary-container": "#785a1a",
+                      "primary": "#000a1e",
+                      "professional-cyan": "#2ACADB",
+                      "secondary-fixed": "#ffdea5",
+                      "inverse-primary": "#aec7f6",
+                      "tertiary-fixed": "#8ff2ff",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f3f0f0",
+                      "background": "#fbf9f8",
+                      "on-secondary-fixed": "#261900",
+                      "primary-fixed-dim": "#aec7f6",
+                      "on-background": "#1b1c1c",
+                      "on-primary-fixed": "#001b3d",
+                      "surface-container": "#f0eded",
+                      "outline-variant": "#c4c6cf",
+                      "on-surface-variant": "#44474e",
+                      "on-secondary-fixed-variant": "#5d4201",
+                      "primary-container": "#002147",
+                      "surface-container-highest": "#e4e2e1",
+                      "tertiary": "#000d0f",
+                      "surface-container-lowest": "#ffffff",
+                      "error": "#ba1a1a",
+                      "on-surface": "#1b1c1c",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "charcoal-text": "#333333",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#fed488",
+                      "legacy-gold": "#C5A059",
+                      "inverse-surface": "#303030",
+                      "on-primary-container": "#708ab5",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e4e2e1",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary-fixed-variant": "#2d476f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "base": "8px",
+                      "margin-mobile": "20px",
+                      "gutter-desktop": "24px",
+                      "section-gap": "120px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "64px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-professional-cyan/30 selection:text-heritage-navy flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-primary text-primary dark:text-on-primary font-body-md text-body-md w-full top-0 sticky border-b border-heritage-navy/10 dark:border-outline-variant flat no shadows z-50">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center h-20">
+<!-- Brand Logo -->
+<a class="font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-secondary-fixed" href="#"><img alt="Legacy Brain Solutions Limited" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkxFRS8nLCEl_TlYFV6KWqznv-p9L-i5BOCt63uHBcBlpjKDIgSldntjINI1Fnq2TmHVCTyL0xrWOKN7bmktEoaMVeYcN0OZvpZdpAOZAXMd_TTGJwqMG8nh_5Pf0vp8__KlfI1e1GW2a2Edw3Qt9ps5h34HrFhVpGTzO6w0IJcYqqFYWXR1I7L7C4EcJnbgnjXaOUbqvA1pvg4VpBWRO3MEnFii86FJgKnUTdIDPb6OQT3mj3DoNoxOrw5AkquHOmvLs"/></a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex gap-gutter-desktop h-full items-center">
+<a class="text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">
+                    Home
+                </a>
+<a class="text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">
+                    About Us
+                </a>
+<a class="text-professional-cyan font-bold border-b-2 border-professional-cyan pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">
+                    Services
+                </a>
+<a class="text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">
+                    News
+                </a>
+<a class="text-heritage-navy dark:text-surface-bright pb-1 hover:text-professional-cyan transition-colors duration-200" href="#">
+                    Contact
+                </a>
+</nav>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-professional-cyan text-white font-label-md text-label-md rounded hover:bg-opacity-90 transition-opacity" href="#">
+                    Get in Touch
+                </a>
+</div>
+<!-- Mobile Menu Button (Visual Only for UI Design) -->
+<button class="md:hidden flex items-center justify-center p-2 text-heritage-navy">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-muted border-b border-heritage-navy/10 relative overflow-hidden">
+<!-- Ambient Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-professional-cyan/5 to-transparent pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-gutter-desktop items-center relative z-10">
+<div class="flex flex-col gap-6">
+<h1 class="font-display-lg text-4xl md:text-display-lg text-heritage-navy">
+                         Comprehensive Financial Expertise
+                     </h1>
+<p class="font-body-lg text-body-lg text-charcoal-text max-w-xl">
+                         Delivering precision-engineered solutions for complex financial challenges. Our services are designed to ensure stability, ensure compliance, and drive strategic growth for businesses operating in Tanzania and beyond.
+                     </p>
+</div>
+<div class="relative h-64 md:h-96 rounded-lg overflow-hidden border border-heritage-navy/10 shadow-[0_20px_40px_-15px_rgba(42,202,219,0.08)] group">
+<div class="absolute inset-0 bg-heritage-navy/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<img class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" data-alt="A bright, modern light-mode photograph of a high-end corporate office in Dar es Salaam. The scene features a sleek glass conference table with subtle professional cyan accents in the decor. Documents and a tablet displaying financial charts are visible, lit by natural sunlight streaming through large architectural windows. The mood is authoritative, precise, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBZNbZHDfug2DrxNQ1g1DC1eTjwjk8tKMM7VVimpEXpM-bwTXAFm6859V0-nmEMuPvuv6o0Yia_CjbM1J5jsGrSeKWkV87rAKODGSJdFdWptdOxqGytS6whfWlmlexcnXmFUAxIk6yJ4e082jubdnaNASkPEoeolKNJLl6XoseYYWIqLUGWOMOHpB9SqhI4CJ01o0fC8BxHTiX6W-tN4k_MbCH2BupJfkeqX7TGu_BP2wZXHd6MEyS6A"/>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-[1280px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-gutter-desktop auto-rows-[minmax(300px,auto)]">
+<!-- Audit & Assurance - Large Card -->
+<div class="col-span-1 lg:col-span-7 border border-surface-muted bg-white p-6 md:p-12 hover:shadow-[0_40px_80px_-20px_rgba(0,33,71,0.05)] transition-shadow duration-500 flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-8 border border-heritage-navy/5">
+<span class="material-symbols-outlined text-professional-cyan" style="font-variation-settings: 'FILL' 0;">fact_check</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-heritage-navy mb-4">Audit &amp; Assurance</h2>
+<p class="font-body-md text-body-md text-charcoal-text mb-8 max-w-md">
+                                Independent, objective verification of your financial statements. We provide clarity and confidence to stakeholders through rigorous methodology and deep regulatory understanding.
+                            </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-heritage-navy">Statutory Audits</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-heritage-navy">Internal Audits</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-legacy-gold text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-heritage-navy">Special Purpose Audits</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Tax Services - Tall Card -->
+<div class="col-span-1 lg:col-span-5 border border-surface-muted bg-white p-6 md:p-12 hover:shadow-[0_40px_80px_-20px_rgba(0,33,71,0.05)] transition-shadow duration-500 flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-legacy-gold/5 rounded-bl-full -mr-8 -mt-8 pointer-events-none"></div>
+<div>
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-8 border border-heritage-navy/5 relative z-10">
+<span class="material-symbols-outlined text-legacy-gold" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+</div>
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-heritage-navy mb-4 relative z-10">Tax Services</h2>
+<p class="font-body-md text-body-md text-charcoal-text mb-8 relative z-10">
+                                Strategic tax planning and strict compliance management to optimize your position while navigating complex local and international tax frameworks.
+                            </p>
+<div class="w-full h-px bg-legacy-gold/30 mb-8"></div>
+<ul class="space-y-4 relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-professional-cyan text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">arrow_right</span>
+<span class="font-body-md text-body-md text-heritage-navy">Corporate Tax</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-professional-cyan text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">arrow_right</span>
+<span class="font-body-md text-body-md text-heritage-navy">VAT Compliance</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-professional-cyan text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">arrow_right</span>
+<span class="font-body-md text-body-md text-heritage-navy">Personal Income Tax</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-professional-cyan text-[20px] mt-1" style="font-variation-settings: 'FILL' 1;">arrow_right</span>
+<span class="font-body-md text-body-md text-heritage-navy">Tax Planning</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Business Advisory - Medium Card -->
+<div class="col-span-1 lg:col-span-6 border border-surface-muted bg-white p-6 md:p-12 hover:shadow-[0_40px_80px_-20px_rgba(0,33,71,0.05)] transition-shadow duration-500">
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-8 border border-heritage-navy/5">
+<span class="material-symbols-outlined text-professional-cyan" style="font-variation-settings: 'FILL' 0;">trending_up</span>
+</div>
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-heritage-navy mb-4">Business Advisory</h2>
+<p class="font-body-md text-body-md text-charcoal-text mb-8">
+                            Actionable insights for corporate structuring, growth strategies, and transaction support to navigate market complexities successfully.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-surface-muted p-4 border border-heritage-navy/5 rounded">
+<span class="font-label-md text-label-md text-heritage-navy block mb-1">Feasibility Studies</span>
+</div>
+<div class="bg-surface-muted p-4 border border-heritage-navy/5 rounded">
+<span class="font-label-md text-label-md text-heritage-navy block mb-1">Financial Modeling</span>
+</div>
+<div class="bg-surface-muted p-4 border border-heritage-navy/5 rounded sm:col-span-2">
+<span class="font-label-md text-label-md text-heritage-navy block mb-1">Mergers &amp; Acquisitions</span>
+</div>
+</div>
+</div>
+<!-- Accounting & Outsourcing - Medium Card -->
+<div class="col-span-1 lg:col-span-6 border border-surface-muted bg-white p-6 md:p-12 hover:shadow-[0_40px_80px_-20px_rgba(0,33,71,0.05)] transition-shadow duration-500">
+<div class="w-12 h-12 bg-surface-muted rounded-full flex items-center justify-center mb-8 border border-heritage-navy/5">
+<span class="material-symbols-outlined text-legacy-gold" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+</div>
+<h2 class="font-headline-md text-headline-lg-mobile md:text-headline-md text-heritage-navy mb-4">Accounting &amp; Outsourcing</h2>
+<p class="font-body-md text-body-md text-charcoal-text mb-8">
+                            Streamlined financial operations allowing you to focus on core business activities while ensuring meticulous record-keeping.
+                        </p>
+<ul class="space-y-6 border-l-2 border-surface-muted pl-6">
+<li class="relative">
+<div class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-professional-cyan outline outline-4 outline-white"></div>
+<h3 class="font-label-md text-label-md text-heritage-navy mb-1">Payroll Management</h3>
+<p class="font-body-md text-body-md text-charcoal-text/80 text-sm">End-to-end processing and compliance.</p>
+</li>
+<li class="relative">
+<div class="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-legacy-gold outline outline-4 outline-white"></div>
+<h3 class="font-label-md text-label-md text-heritage-navy mb-1">Financial Statement Preparation</h3>
+<p class="font-body-md text-body-md text-charcoal-text/80 text-sm">Accurate, timely reporting to IFRS standards.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-heritage-navy text-white relative overflow-hidden">
+<!-- Subtle architectural background texture -->
+<div class="absolute inset-0 opacity-10 mix-blend-overlay" data-alt="A subtle, high-contrast black and white architectural texture pattern featuring modern, precise grid lines and intersecting structural elements. Designed to be used as a very low-opacity overlay for a dark background section, emphasizing corporate stability and meticulous calculation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA386hjKrcAvqCHpAQkdvJhuV8xCleESenuTRSSlxmiuTs9NkiJoFX5h8_MyUsz4atBVy17tMbiKWuxNDcVSGC4N0P1asdk6-yjAtH8j3meR5RqKpOgDXwGlAon7ACmOH3hPhmaPCZu1AoZ0OmQtummPtQQFI1C0cx37xntS3EkfA9294sqbohDAv2uYwzJ07eV6fySs5NRQBLBXl_9B0NmmTTOk_sSFbpFnQF9bxE4AV80p-8Qlr642w')"></div>
+<div class="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center">
+<h2 class="font-headline-lg text-3xl md:text-headline-lg text-white mb-6">Tailored Solutions for Your Business.</h2>
+<p class="font-body-lg text-body-lg text-surface-muted mb-10 max-w-xl">
+                     Partner with Legacy CPA to navigate complex financial landscapes with confidence and precision.
+                 </p>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-legacy-gold text-heritage-navy font-label-md text-label-md rounded hover:bg-white transition-colors duration-300 w-full md:w-auto" href="#">
+                     Request a Proposal
+                     <span class="material-symbols-outlined ml-2 text-[20px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-muted dark:bg-surface-container-highest text-heritage-navy dark:text-on-surface font-body-md text-body-md w-full py-16 md:py-section-gap border-t border-legacy-gold/30 flat no shadows">
+<div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-gutter-desktop">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-6">
+<div class="font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-secondary-fixed"><img alt="Legacy Brain Solutions Limited" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqnFzXjI_qNjHOvCZaebG2NQ-gGz5Y1xg2xJT9uiIfzFPJojQ1rmSQCmojnKwGNt9u08XLDNfauZhedqhzk99uLhILl_j403x6sznjFYNkBtcXXdkJ-5kdgY7V8uDqGQhHqNRBgf8Co3rRUPnXNx30_-Fitjb75hEJdQBifn727Q1addrrIxX9d98m1cKWUDJH42DceHhLaXBWKhE-fm9hiqAm6XNIb4HSBUdMVIlrTIXX-OVOP7msfr12ofLAfJnp29I"/></div>
+<p class="font-body-md text-body-md text-charcoal-text dark:text-on-surface-variant text-sm">
+                    Excellence in Financial Stewardship.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="col-span-1 md:col-span-3 grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-4">
+<a class="text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200 text-sm" href="#">
+                        Dar es Salaam Office
+                    </a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200 text-sm" href="#">
+                        NBAA Portal
+                    </a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200 text-sm" href="#">
+                        Privacy Policy
+                    </a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-charcoal-text dark:text-on-surface-variant hover:text-legacy-gold transition-colors duration-200 text-sm" href="#">
+                        Terms of Service
+                    </a>
+</div>
+</div>
+<!-- Copyright -->
+<div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-heritage-navy/10 dark:border-outline-variant text-sm text-charcoal-text dark:text-on-surface-variant text-center md:text-left">
+                © 2024 Legacy CPA Tanzania. All rights reserved. Registered with NBAA.
+            </div>
+</div>
+</footer>
+</body></html>

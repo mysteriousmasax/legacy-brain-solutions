@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Department Permissions - Legacy CPA Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-container": "#0097a5", "on-tertiary": "#ffffff", "on-error": "#ffffff", "outline": "#74777f", "on-tertiary-fixed-variant": "#004f56", "on-surface-variant": "#44474e", "surface-container-high": "#eae8e7", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#f3f0f0", "on-primary-fixed-variant": "#2d476f", "surface-variant": "#e4e2e1", "inverse-primary": "#aec7f6", "on-error-container": "#93000a", "surface-bright": "#fbf9f8", "error": "#ba1a1a", "surface-container": "#f0eded", "surface-container-low": "#f6f3f2", "primary": "#000a1e", "tertiary": "#000d0f", "tertiary-fixed": "#8ff2ff", "background": "#fbf9f8", "surface": "#fbf9f8", "on-primary-fixed": "#001b3d", "primary-container": "#002147", "charcoal-text": "#333333", "on-surface": "#1b1c1c", "on-secondary-container": "#785a1a", "professional-cyan": "#2ACADB", "secondary": "#775a19", "error-container": "#ffdad6", "surface-muted": "#F6F5F5", "surface-dim": "#dcd9d9", "primary-fixed": "#d6e3ff", "outline-variant": "#c4c6cf", "on-primary-container": "#708ab5", "secondary-container": "#fed488", "inverse-surface": "#303030", "primary-fixed-dim": "#aec7f6", "on-background": "#1b1c1c", "secondary-fixed-dim": "#e9c176", "secondary-fixed": "#ffdea5", "on-secondary-fixed": "#261900", "on-primary": "#ffffff", "tertiary-fixed-dim": "#43d9ea", "on-secondary": "#ffffff", "on-secondary-fixed-variant": "#5d4201", "tertiary-container": "#00262a", "on-tertiary-fixed": "#001f23", "heritage-navy": "#002147", "surface-container-highest": "#e4e2e1", "legacy-gold": "#C5A059", "surface-tint": "#465f88"
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                    spacing: { "section-gap": "120px", "margin-desktop": "80px", "base": "8px", "gutter-desktop": "24px", "margin-mobile": "20px" },
+                    fontFamily: { "headline-sm": ["Playfair Display"], "headline-md": ["Playfair Display"], "body-lg": ["Inter"], "headline-lg": ["Playfair Display"], "display-lg": ["Playfair Display"], "label-md": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Playfair Display"] },
+                    fontSize: { "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }], "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "700" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }] }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow { box-shadow: 0 10px 40px -10px rgba(0, 33, 71, 0.08); }
+        .ambient-shadow-hover:hover { box-shadow: 0 10px 40px -10px rgba(0, 33, 71, 0.12); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex antialiased">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface border-r border-legacy-gold/30 flex flex-col py-base z-40 bg-surface-muted dark:bg-surface-container">
+<div class="px-6 py-8 flex flex-col items-center border-b border-legacy-gold/20 mb-6">
+<div class="w-16 h-16 rounded-full bg-heritage-navy flex items-center justify-center text-legacy-gold font-headline-md text-headline-md font-bold mb-4">L</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed text-center leading-tight">Legacy CPA</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 text-center uppercase tracking-widest">Excellence &amp; Precision</p>
+<div class="mt-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-legacy-gold" style="font-size: 16px;">admin_panel_settings</span>
+<span class="font-label-sm text-label-sm text-primary">Firm Administrator</span>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 rounded text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Clients</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-4 px-4 py-3 rounded bg-surface-container-low text-primary dark:text-primary-fixed font-bold border-r-4 border-legacy-gold cursor-pointer active:scale-95 duration-150 relative -mr-[17px] pr-[19px]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">badge</span>
+<span class="font-label-md text-label-md">Staff</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-on-surface-variant dark:text-outline hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">System Settings</span>
+</a>
+</nav>
+</aside>
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-surface dark:bg-surface border-b border-legacy-gold/30 shadow-sm dark:shadow-none flex justify-between items-center h-16 px-gutter-desktop ml-64">
+<div class="flex items-center">
+<h2 class="font-headline-sm text-headline-sm font-bold text-heritage-navy dark:text-primary-fixed">Legacy CPA Dashboard</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative focus-within:ring-2 focus-within:ring-professional-cyan rounded">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded bg-surface-muted text-on-surface focus:outline-none focus:border-legacy-gold font-body-md text-body-md w-64" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:bg-surface-muted transition-all p-2 rounded-full cursor-pointer active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:bg-surface-muted transition-all p-2 rounded-full cursor-pointer active:scale-95 duration-150">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-margin-desktop w-[calc(100%-16rem)] flex-1 flex flex-col">
+<!-- Page Header -->
+<div class="mb-12">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-4">Department Permissions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Configure system access levels and visibility for specific firm departments to ensure secure and efficient operations across all disciplines.</p>
+</div>
+<!-- Sub-navigation Tabs -->
+<div class="flex border-b border-outline-variant mb-10 w-full max-w-5xl">
+<a class="px-6 py-4 font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-muted transition-colors" href="#">Directory</a>
+<a class="px-6 py-4 font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-muted transition-colors" href="#">Access Roles</a>
+<a class="px-6 py-4 font-label-md text-label-md text-primary font-bold border-b-2 border-legacy-gold relative -mb-[1px]" href="#">Department Permissions</a>
+</div>
+<!-- Content Area: Department List -->
+<div class="max-w-5xl flex-1 flex flex-col">
+<div class="space-y-6 flex-1">
+<!-- Department Item 1 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-6 flex items-start gap-8 ambient-shadow-hover transition-shadow duration-300">
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-legacy-gold">fact_check</span>
+                            Audit &amp; Assurance
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4"><span class="font-semibold text-primary">Head of Dept:</span> Sarah Jenkins, Partner</p>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock_open</span> Client Data (Full)</span>
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">edit_document</span> Working Papers</span>
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">group</span> Staff Management (Dept Only)</span>
+</div>
+</div>
+<div class="w-64 border-l border-outline-variant pl-8 flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Access Level</label>
+<select class="w-full bg-surface-muted border border-outline-variant rounded px-3 py-2 font-body-md text-body-md text-primary focus:border-legacy-gold focus:ring-1 focus:ring-legacy-gold outline-none">
+<option>Restricted</option>
+<option selected="">Standard Access</option>
+<option>Full Access</option>
+<option>Custom</option>
+</select>
+</div>
+</div>
+<!-- Department Item 2 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-6 flex items-start gap-8 ambient-shadow-hover transition-shadow duration-300">
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-legacy-gold">account_balance</span>
+                            Tax Services
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4"><span class="font-semibold text-primary">Head of Dept:</span> David Chen, Partner</p>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">lock_open</span> Client Data (Full)</span>
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">receipt</span> Tax Filings</span>
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">payments</span> Billing (View Only)</span>
+</div>
+</div>
+<div class="w-64 border-l border-outline-variant pl-8 flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Access Level</label>
+<select class="w-full bg-surface-muted border border-outline-variant rounded px-3 py-2 font-body-md text-body-md text-primary focus:border-legacy-gold focus:ring-1 focus:ring-legacy-gold outline-none">
+<option>Restricted</option>
+<option>Standard Access</option>
+<option selected="">Full Access</option>
+<option>Custom</option>
+</select>
+</div>
+</div>
+<!-- Department Item 3 -->
+<div class="bg-surface border border-outline-variant rounded-lg p-6 flex items-start gap-8 ambient-shadow-hover transition-shadow duration-300 opacity-75">
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-heritage-navy mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline">admin_panel_settings</span>
+                            Administrative
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4"><span class="font-semibold text-primary">Head of Dept:</span> Rachel Nyerere, Director</p>
+<div class="flex gap-2 flex-wrap">
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility_off</span> Client Data (Restricted)</span>
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">payments</span> Billing (Full)</span>
+<span class="px-3 py-1 bg-surface-muted border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">group</span> Firm Roster</span>
+</div>
+</div>
+<div class="w-64 border-l border-outline-variant pl-8 flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block">Access Level</label>
+<select class="w-full bg-surface-muted border border-outline-variant rounded px-3 py-2 font-body-md text-body-md text-primary focus:border-legacy-gold focus:ring-1 focus:ring-legacy-gold outline-none">
+<option selected="">Restricted</option>
+<option>Standard Access</option>
+<option>Full Access</option>
+<option>Custom</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-12 flex justify-end gap-4 border-t border-legacy-gold/30 pt-8">
+<button class="px-6 py-3 font-label-md text-label-md rounded border border-heritage-navy text-legacy-gold hover:bg-surface-muted transition-colors">Discard Changes</button>
+<button class="px-6 py-3 font-label-md text-label-md rounded bg-professional-cyan text-on-primary hover:bg-professional-cyan/90 transition-colors shadow-sm">Save Permissions</button>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-[calc(100%-16rem)] ml-64 mt-auto border-t border-legacy-gold/20 bg-surface-muted dark:bg-surface-container-low flex justify-between items-center py-6 px-gutter-desktop">
+<div class="flex items-center gap-4">
+<span class="font-label-md text-label-md font-semibold text-heritage-navy">Legacy CPA</span>
+<span class="font-body-md text-body-md text-secondary dark:text-secondary-fixed">© 2024 Legacy CPA Firm. All rights reserved.</span>
+</div>
+<div class="flex gap-6">
+<a class="font-label-sm text-label-sm text-outline hover:text-legacy-gold transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-legacy-gold transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-outline hover:text-legacy-gold transition-colors" href="#">Support</a>
+</div>
+</footer>
+</body></html>
