@@ -5,7 +5,7 @@ React/Vite frontend and Express/Prisma API for the Legacy CPA Tanzania website, 
 ## Local setup
 
 1. Install Node.js 20+.
-2. Copy `.env.example` to `.env`, set a random `JWT_SECRET`, and use `DATABASE_URL="file:./dev.db"` for the included local SQLite setup.
+2. Copy `.env.example` to `.env`, set a random `JWT_SECRET`, and point `DATABASE_URL` at a PostgreSQL database.
 3. Install dependencies: `npm install`.
 4. Create the schema: `npm run db:generate`, then `npx prisma db push`.
 5. Seed local content: `npm run db:seed`.
@@ -13,16 +13,15 @@ React/Vite frontend and Express/Prisma API for the Legacy CPA Tanzania website, 
 
 ## Railway deployment
 
-Deploy this repository as a single Node.js service. Railway uses `npm run build` to generate Prisma Client and build the frontend, then `npm start` to synchronize the SQLite schema and start the API/web server. The server listens on Railway's `PORT` and serves the built site and `/api` from the same origin.
+Deploy this repository as a single Node.js service alongside a Railway PostgreSQL service. Railway uses `npm run build` to generate Prisma Client and build the frontend, then `npm start` to synchronize the PostgreSQL schema and start the API/web server. The server listens on Railway's `PORT` and serves the built site and `/api` from the same origin.
 
-Before the first deploy, attach a Railway volume mounted at `/data` and set these service variables:
+In the app service's Variables, connect `DATABASE_URL` to the PostgreSQL service using a Railway reference such as `${{Postgres.DATABASE_URL}}` (replace `Postgres` with the database service's name). For persistent uploaded files, attach a volume mounted at `/data` and set these service variables:
 
-- `DATABASE_URL=file:/data/legacy.db`
 - `UPLOAD_DIR=/data/uploads`
 - `JWT_SECRET` to a long, randomly generated secret
 - `ADMIN_EMAIL` and `ADMIN_PASSWORD` to the initial administrator's credentials before production seeding; the password must be at least 16 characters
 
-Keep one running replica when using SQLite. The database and uploaded files are stored on the volume. After the first deploy, run `npm run db:seed` once from the Railway service shell to create the initial admin and public content. Production seeding refuses to run without the configured admin email and a unique password of at least 16 characters. The default seeded credentials below are for local development only.
+After the first deploy, run `npm run db:seed` once from the Railway service shell to create the initial admin and public content. Production seeding refuses to run without the configured admin email and a unique password of at least 16 characters. The default seeded credentials below are for local development only.
 
 Railway's `/api/health` health check is configured in `railway.json`. Set `PUBLIC_URL` to the deployed site origin only if you access the API from another origin.
 
