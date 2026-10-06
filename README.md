@@ -20,8 +20,9 @@ Before the first deploy, attach a Railway volume mounted at `/data` and set thes
 - `DATABASE_URL=file:/data/legacy.db`
 - `UPLOAD_DIR=/data/uploads`
 - `JWT_SECRET` to a long, randomly generated secret
+- `ADMIN_EMAIL` and `ADMIN_PASSWORD` to the initial administrator's credentials before production seeding; the password must be at least 16 characters
 
-Keep one running replica when using SQLite. The database and uploaded files are stored on the volume. After the first deploy, run `npm run db:seed` once from the Railway service shell to create the initial admin and public content. The seeded admin credentials below are for local setup; change the password immediately if using the seed in production. Do not use the seeded password on a public deployment.
+Keep one running replica when using SQLite. The database and uploaded files are stored on the volume. After the first deploy, run `npm run db:seed` once from the Railway service shell to create the initial admin and public content. Production seeding refuses to run without the configured admin email and a unique password of at least 16 characters. The default seeded credentials below are for local development only.
 
 Railway's `/api/health` health check is configured in `railway.json`. Set `PUBLIC_URL` to the deployed site origin only if you access the API from another origin.
 
