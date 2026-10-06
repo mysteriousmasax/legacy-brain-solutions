@@ -5,10 +5,10 @@ const prisma = new PrismaClient()
 const main = async () => {
 	const adminEmail = process.env.ADMIN_EMAIL || 'legacybrain.co@gmail.com'
 	const adminPassword = process.env.ADMIN_PASSWORD || 'ChangeMe123!'
-	if (process.env.NODE_ENV === 'production' && (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD || adminPassword.length < 16)) throw new Error('Production seeding requires ADMIN_EMAIL and an ADMIN_PASSWORD of at least 16 characters.')
+	if (process.env.NODE_ENV === 'production' && (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD || adminPassword.length < 6)) throw new Error('Production seeding requires ADMIN_EMAIL and an ADMIN_PASSWORD of at least 6 characters.')
 	const passwordHash = await bcrypt.hash(adminPassword, 12)
 	const role = await prisma.role.upsert({ where: { name: 'Partner' }, update: {}, create: { name: 'Partner', description: 'Full firm administration access' } })
-	await prisma.user.upsert({ where: { email: adminEmail }, update: {}, create: { email: adminEmail, name: 'Admin User', passwordHash, type: 'ADMIN', roleId: role.id } })
+	await prisma.user.upsert({ where: { email: adminEmail }, update: process.env.ADMIN_PASSWORD ? { passwordHash } : {}, create: { email: adminEmail, name: 'Admin User', passwordHash, type: 'ADMIN', roleId: role.id } })
 	for (const service of [
 		{ slug: 'audit-assurance', name: 'Audit & Assurance', summary: 'Independent assurance for confident decisions.', body: 'Statutory, internal, and special purpose audits.' },
 		{ slug: 'tax-advisory', name: 'Tax Advisory', summary: 'Strategic tax planning and compliance.', body: 'Practical support for a changing Tanzanian tax landscape.' },

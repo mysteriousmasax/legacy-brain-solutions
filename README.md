@@ -19,9 +19,9 @@ In the app service's Variables, connect `DATABASE_URL` to the PostgreSQL service
 
 - `UPLOAD_DIR=/data/uploads`
 - `JWT_SECRET` to a long, randomly generated secret
-- `ADMIN_EMAIL` and `ADMIN_PASSWORD` to the initial administrator's credentials before production seeding; the password must be at least 16 characters
+- `ADMIN_EMAIL` and `ADMIN_PASSWORD` to the initial administrator's credentials before production seeding; login accepts passwords with at least 6 characters, while new registrations require at least 8
 
-After the first deploy, run `npm run db:seed` once from the Railway service shell to create the initial admin and public content. Production seeding refuses to run without the configured admin email and a unique password of at least 16 characters. The default seeded credentials below are for local development only.
+After the first deploy, run `npm run db:seed` once from the Railway service shell to create the initial admin and public content. Failed login attempts are limited to five per 15 minutes. Six-character passwords are substantially less secure; use a longer unique password for production. The default seeded credentials below are for local development only.
 
 Railway's `/api/health` health check is configured in `railway.json`. Set `PUBLIC_URL` to the deployed site origin only if you access the API from another origin.
 
