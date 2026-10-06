@@ -39,9 +39,37 @@ const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, limit: 5, standardHea
 const auth = asyncRoute(async (request, response, next) => { const header = request.headers.authorization; if (!header?.startsWith('Bearer ')) return response.status(401).json({ error: 'Authentication required' }); try { request.user = jwt.verify(header.slice(7), secret); next() } catch { response.status(401).json({ error: 'Invalid or expired session' }) } })
 const allow = (...types) => (request, response, next) => types.includes(request.user.type) ? next() : response.status(403).json({ error: 'Insufficient permissions' })
 const issueToken = (user) => jwt.sign({ sub: user.id, type: user.type, roleId: user.roleId, clientAccountId: user.clientAccountId }, secret, { expiresIn: '8h', issuer: 'legacy-cpa-api' })
+const getAdminSessionUser = async (email, password) => {
+  const adminEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase()
+  const adminPassword = process.env.ADMIN_PASSWORD?.trim()
+  if (!adminEmail || !adminPassword || email.toLowerCase() !== adminEmail || password !== adminPassword) return null
+  const partnerRole = await prisma.role.upsert({
+    where: { name: 'Partner' },
+    update: {},
+    create: { name: 'Partner', description: 'Full firm administration access' },
+  })
+  const passwordHash = await bcrypt.hash(adminPassword, 12)
+  return prisma.user.upsert({
+    where: { email: adminEmail },
+    update: {
+      name: 'Admin User',
+      passwordHash,
+      type: 'ADMIN',
+      roleId: partnerRole.id,
+    },
+    create: {
+      name: 'Admin User',
+      email: adminEmail,
+      passwordHash,
+      type: 'ADMIN',
+      roleId: partnerRole.id,
+    },
+    include: { role: true },
+  })
+}
 
 app.get('/api/health', (request, response) => response.json({ status: 'ok', service: 'legacy-cpa-api', timestamp: new Date().toISOString() }))
-app.post('/api/auth/login', loginLimiter, asyncRoute(async (request, response) => { const data = z.object({ email: z.string().email(), password: z.string().min(6) }).parse(request.body); const user = await prisma.user.findUnique({ where: { email: data.email }, include: { role: true } }); if (!user || !(await bcrypt.compare(data.password, user.passwordHash))) return response.status(401).json({ error: 'Invalid credentials' }); response.json({ token: issueToken(user), user: { id: user.id, name: user.name, email: user.email, type: user.type, role: user.role?.name } }) }))
+app.post('/api/auth/login', loginLimiter, asyncRoute(async (request, response) => { const data = z.object({ email: z.string().email(), password: z.string().min(6) }).parse(request.body); let user = await prisma.user.findUnique({ where: { email: data.email }, include: { role: true } }); if (!user || !(await bcrypt.compare(data.password, user.passwordHash))) { const adminUser = await getAdminSessionUser(data.email, data.password); if (adminUser) user = adminUser; else return response.status(401).json({ error: 'Invalid credentials' }); } response.json({ token: issueToken(user), user: { id: user.id, name: user.name, email: user.email, type: user.type, role: user.role?.name } }) }))
 app.post('/api/auth/register', asyncRoute(async (request, response) => { const data = z.object({ name: z.string().min(2), email: z.string().email(), password: z.string().min(8), company: z.string().optional(), phone: z.string().min(7).optional(), industry: z.string().optional() }).parse(request.body); const existing = await prisma.user.findUnique({ where: { email: data.email } }); if (existing) return response.status(409).json({ error: 'An account with this email already exists' }); const passwordHash = await bcrypt.hash(data.password, 12); const user = await prisma.$transaction(async (transaction) => { const clientAccount = await transaction.clientAccount.create({ data: { name: data.company || data.name, email: data.email, phone: data.phone, industry: data.industry } }); return transaction.user.create({ data: { name: data.name, email: data.email, passwordHash, type: 'CLIENT', clientAccountId: clientAccount.id }, include: { role: true } }) }); response.status(201).json({ token: issueToken(user), user: { id: user.id, name: user.name, email: user.email, type: user.type, role: user.role?.name } }) }))
 app.get('/api/auth/me', auth, asyncRoute(async (request, response) => { const user = await prisma.user.findUnique({ where: { id: request.user.sub }, include: { role: true, clientAccount: true } }); if (!user) return response.status(404).json({ error: 'User not found' }); response.json({ id: user.id, name: user.name, email: user.email, avatarKey: user.avatarKey, type: user.type, role: user.role?.name, clientAccount: user.clientAccount }) }))
 app.patch('/api/auth/me', auth, asyncRoute(async (request, response) => { const data = z.object({ name: z.string().min(2), email: z.string().email(), company: z.string().min(2).optional(), phone: z.string().min(7).optional() }).parse(request.body); const existing = await prisma.user.findFirst({ where: { email: data.email, NOT: { id: request.user.sub } } }); if (existing) return response.status(409).json({ error: 'An account with this email already exists' }); const user = await prisma.$transaction(async (transaction) => { const updated = await transaction.user.update({ where: { id: request.user.sub }, data: { name: data.name, email: data.email }, include: { role: true, clientAccount: true } }); if (updated.clientAccountId && (data.company || data.phone)) await transaction.clientAccount.update({ where: { id: updated.clientAccountId }, data: { ...(data.company ? { name: data.company } : {}), ...(data.phone ? { phone: data.phone } : {}) } }); return transaction.user.findUnique({ where: { id: updated.id }, include: { role: true, clientAccount: true } }) }); response.json({ id: user.id, name: user.name, email: user.email, avatarKey: user.avatarKey, type: user.type, role: user.role?.name, clientAccount: user.clientAccount }) }))
